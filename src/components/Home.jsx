@@ -1,7 +1,15 @@
-import React from "react";
+import QuoteHome from "./QuoteHome";
+import TitleHome from "./TitleHome";
+
 
 const Home = () => {
-  return <div />;
-};
+    
+    return (
+        <div>
+            <TitleHome />
+            <QuoteHome />
+        </div>
+    )
+}
 
 export default Home;
