@@ -15,8 +15,8 @@ const links = [
     name: "quote me",
   },
   {
-    path: "/top-quote",
-    name: "top quote",
+    path: "/top-quotes",
+    name: "top quotes",
   },
   {
     path: "/the-crew",
