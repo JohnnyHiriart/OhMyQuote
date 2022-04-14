@@ -16,10 +16,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Logo />} />
-        <Route path="/Category" element={<Category />} />
-        <Route path="/QuoteMe" element={<QuoteMe />} />
-        <Route path="/TopQuotes" element={<TopQuotes />} />
-        <Route path="/TheCrew" element={<TheCrew />} />
+        <Route path="/category" element={<Category />} />
+        <Route path="/quoteMe" element={<QuoteMe />} />
+        <Route path="/topQuotes" element={<TopQuotes />} />
+        <Route path="/theCrew" element={<TheCrew />} />
       </Routes>
     </div>
   );
