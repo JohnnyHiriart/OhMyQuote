@@ -1,7 +1,7 @@
 import React from "react";
 
 const QuoteMe = () => {
-  return <div>ddd</div>;
+  return <div>QuoteMe</div>;
 };
 
 export default QuoteMe;

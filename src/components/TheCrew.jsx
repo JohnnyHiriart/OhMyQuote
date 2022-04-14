@@ -1,7 +1,7 @@
 import React from "react";
 
 const TheCrew = () => {
-  return <div>aaaz</div>;
+  return <div>The Crew</div>;
 };
 
 export default TheCrew;
