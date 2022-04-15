@@ -1,15 +1,23 @@
 import React from "react";
 import Card from "./Card";
+import WhiteButton from "./WhiteButton";
+import RedButton from "./RedButton";
+
+
 
 const TheCrew = () => {
   return (
   <div>
-        <div class="text-redquote text-7xl font-bold m-16 w-11/12 ml-40 text-center"><h1>THE CREW</h1></div>
+        <div class="text-redquote text-7xl font-bold m-16 w-11/12 ml-40 justify-center text-center"><h1>THE CREW</h1></div>
         <div class="flex gap-8 w-11/12 ml-40">
     {crewItems.map((crew, index)=>(
     <Card key = {index} {...crew} />
     ))}
     </div>
+    <div className = "flex flex-col items-center mt-10">
+    <RedButton text = "FEEDBACK"/>
+    <WhiteButton text = "CONTACT US"/>
+  </div>
   </div>
   );
   };
