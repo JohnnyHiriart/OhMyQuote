@@ -1,18 +1,26 @@
 import React from "react";
 import Card from "./Card";
+import NavBar from "./NavBar";
 
 const TheCrew = () => {
   return (
-  <div>
-        <div class="text-redquote text-7xl font-bold m-16 w-11/12 ml-40 text-center"><h1>THE CREW</h1></div>
-        <div class="flex gap-8 w-11/12 ml-40">
-    {crewItems.map((crew, index)=>(
-    <Card key = {index} {...crew} />
-    ))}
+    <div>
+      <div>
+        <NavBar />
+      </div>
+      <div className="flex fixed left-28 p-5 content-center justify-center flex-col">
+        <div className="flex text-redquote text-7xl font-bold justify-center">
+          <h1>THE CREW</h1>
+        </div>
+        <div className="flex gap-8  ">
+          {crewItems.map((crew, index) => (
+            <Card key={index} {...crew} />
+          ))}
+        </div>
+      </div>
     </div>
-  </div>
   );
-  };
+};
 
 const crewItems = [
   {
@@ -24,7 +32,8 @@ const crewItems = [
   {
     image: "./assets/2462f5c6-e17c-47d0-93e4-a760af066183.jpg",
     title: "Fred: Our Quote Editor",
-    quote: "'It's better to keep quiet and look like a jerk than to talk and leave no doubt about it'",
+    quote:
+      "'It's better to keep quiet and look like a jerk than to talk and leave no doubt about it'",
     signature: "Pierre Desproges",
   },
   {
@@ -36,7 +45,8 @@ const crewItems = [
   {
     image: "./assets/IMG_20220325_104207.jpeg",
     title: "Johnny: Our Quote Master",
-    quote: "'After thirty years of studying female psychology, I still haven't found the answer to the big question: what do they really want?'",
+    quote:
+      "'After thirty years of studying female psychology, I still haven't found the answer to the big question: what do they really want?'",
     signature: "Sigmund Freud",
   },
 ];

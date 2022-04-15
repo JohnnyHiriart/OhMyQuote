@@ -1,27 +1,80 @@
 import React from "react";
 import CategoryBlackBlock from "./CategoryBlackBlock";
 import CategoryRedBlock from "./CategoryRedBlock";
+import NavBar from "./NavBar";
 
 const Category = () => {
-  return (<div>
-    <ul className=" w-10/12 h-4/5 grid xl:grid-cols-5 font-bold xl:grid-rows-3 ml-40 mr-20 justify-center align-center gap-1 sm:grid-cols-3 sm:grid-rows-5">
-        <CategoryBlackBlock name={"ART"} subCategories={["Category 1", "Category 2", "Category 3"]} />
-        <CategoryRedBlock name={"HISTORY"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-        <CategoryBlackBlock name={"BOOKS"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-        <CategoryRedBlock name={"LIFE"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-        <CategoryBlackBlock name={"LOVE"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-        <CategoryRedBlock name={"POP CULTURE"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-        <CategoryBlackBlock name={"DEATH"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-        <CategoryRedBlock name={"FUN STUFF"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-        <CategoryBlackBlock name={"MOVIES"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-        <CategoryRedBlock name={"ANIMALS"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-        <CategoryBlackBlock name={"SCIENCE"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-        <CategoryRedBlock name={"GAMES"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-        <CategoryBlackBlock name={"TV"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-        <CategoryRedBlock name={"POLITICS"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-        <CategoryBlackBlock name={"FAMILY"} subCategories={["Category 1", "Category 2", "Category 3"]}/>
-    </ul>
-  </div>)
+  return (
+    <div>
+      <div>
+        <NavBar />
+      </div>
+      <div className="flex fixed left-28 p-10 justify-center content-center">
+        <ul className=" grid lg:grid-cols-5 font-bold lg:grid-rows-3 font-barlow justify-center align-center gap-1 sm:grid-cols-3 sm:grid-rows-5">
+          <CategoryBlackBlock
+            name={["ART"]}
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryRedBlock
+            name={["HISTORY"]}
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryBlackBlock
+            name="BOOKS"
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryRedBlock
+            name="LIFE"
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryBlackBlock
+            name="LOVE"
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryRedBlock
+            name="POP CULTURE"
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryBlackBlock
+            name="DEATH"
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryRedBlock
+            name="FUN STUFF"
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryBlackBlock
+            name="MOVIES"
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryRedBlock
+            name="ANIMALS"
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryBlackBlock
+            name="SCIENCE"
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryRedBlock
+            name="GAMES"
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryBlackBlock
+            name="TV"
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryRedBlock
+            name="POLITICS"
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+          <CategoryBlackBlock
+            name="FAMILY"
+            subCategories={["Category ", "Category ", "Category "]}
+          />
+        </ul>
+      </div>
+    </div>
+  );
 };
 
 export default Category;
