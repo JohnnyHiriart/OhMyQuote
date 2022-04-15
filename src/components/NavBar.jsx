@@ -1,13 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
-import Home from "./Home";
 
 const links = [
-  // {
-  //   path: "/",
-  //   name: "",
-  // },
   {
     path: "/category",
     name: " CATEGORY ",
@@ -28,14 +23,15 @@ const links = [
 
 const NavBar = () => {
   return (
-    <nav>
-      <Logo />
-      <Link to="/" element={<Home />} />
-      <ul className="">
+    <nav className="flex fixed left-0 flex-col content-around mr-5 ml-2 pr-4 border-r-4 border-redquote">
+      <Link to="/">
+        <Logo />
+      </Link>
+      <ul className="flex flex-col pt-10">
         {links.map((link, index) => (
           <li
             key={index}
-            className="flex w-auto p-5 m-1 border-20 text-justify [writing-mode:vertical-rl] [text-orientation:upright]"
+            className="flex p-5 m-1 text-nav border-20 hover:font-bold hover:text-redquote  border-t-black border-t-2 text-justify [writing-mode:vertical-rl] [text-orientation:upright]"
           >
             <Link to={link.path}>{link.name}</Link>
           </li>

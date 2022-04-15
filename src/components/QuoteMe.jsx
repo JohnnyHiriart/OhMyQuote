@@ -1,7 +1,13 @@
 import React from "react";
+import NavBar from "./NavBar";
 
 const QuoteMe = () => {
-  return <div>QuoteMe</div>;
+  return (
+   <div>
+      <div>
+          <NavBar />
+      </div>
+  </div>);
 };
 
 export default QuoteMe;
