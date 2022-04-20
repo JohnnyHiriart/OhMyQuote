@@ -6,6 +6,6 @@ const RedButton = ({ text }) => {
     {text}
   </button>
   );
-  };
+};
 
 export default RedButton;

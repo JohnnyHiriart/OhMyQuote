@@ -4,7 +4,6 @@ import NavBar from "./NavBar";
 import WhiteButton from "./WhiteButton";
 import RedButton from "./RedButton";
 
-
 const TheCrew = () => {
   return (
     <div>
