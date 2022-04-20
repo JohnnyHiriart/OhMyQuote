@@ -22,8 +22,8 @@ module.exports = {
         redquote: "#FF1616",
       },
       fontFamily: {
-        'sans': ["Jost", "sans-serif"],
-        'Barlow': ['Barlow Condensed', 'sans-serif']
+        sans: ["Jost", "sans-serif"],
+        Barlow: ["Barlow Condensed", "sans-serif"],
       },
       animation: {
         "slide-in-bck-bottom-first":
