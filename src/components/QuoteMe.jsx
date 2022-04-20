@@ -3,11 +3,12 @@ import NavBar from "./NavBar";
 
 const QuoteMe = () => {
   return (
-   <div>
+    <div>
       <div>
-          <NavBar />
+        <NavBar />
       </div>
-  </div>);
+    </div>
+  );
 };
 
 export default QuoteMe;

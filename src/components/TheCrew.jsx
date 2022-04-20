@@ -4,30 +4,6 @@ import NavBar from "./NavBar";
 import WhiteButton from "./WhiteButton";
 import RedButton from "./RedButton";
 
-const TheCrew = () => {
-  return (
-    <div>
-      <div>
-        <NavBar />
-      </div>
-      <div className="flex fixed left-28 p-5 content-center justify-center flex-col">
-        <div className="flex text-redquote text-7xl font-bold justify-center">
-          <h1>THE CREW</h1>
-        </div>
-        <div className="flex gap-8  ">
-          {crewItems.map((crew, index) => (
-            <Card key={index} {...crew} />
-          ))}
-        </div>
-        <div className="flex flex-col items-center mt-5">
-          <div><WhiteButton text={"CONTACT US"} /></div>
-          <div><RedButton text={"FEEDBACK"} /></div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const crewItems = [
   {
     image: "./assets/86A5FC2D-3A82-4DF3-8F32-564B9583A941_1_201_a.jpg",
@@ -56,5 +32,33 @@ const crewItems = [
     signature: "Sigmund Freud",
   },
 ];
+
+const TheCrew = () => {
+  return (
+    <div>
+      <div>
+        <NavBar />
+      </div>
+      <div className="fixed flex flex-col content-center justify-center p-5 left-28">
+        <div className="flex justify-center font-bold text-redquote text-7xl">
+          <h1>THE CREW</h1>
+        </div>
+        <div className="flex gap-8 ">
+          {crewItems.map((crew, index) => (
+            <Card key={index} {...crew} />
+          ))}
+        </div>
+        <div className="flex flex-col items-center mt-5">
+          <div>
+            <WhiteButton text="CONTACT US" />
+          </div>
+          <div>
+            <RedButton text="FEEDBACK" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default TheCrew;
