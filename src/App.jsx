@@ -11,7 +11,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="flex h-screen justify-around content-center">
+    <div className="flex h-screen w-screen justify-around content-center">
       <div>
         <Routes>
           <Route path="/" element={<Home />} />

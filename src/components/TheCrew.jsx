@@ -1,6 +1,9 @@
 import React from "react";
 import Card from "./Card";
 import NavBar from "./NavBar";
+import WhiteButton from "./WhiteButton";
+import RedButton from "./RedButton";
+
 
 const TheCrew = () => {
   return (
@@ -16,6 +19,10 @@ const TheCrew = () => {
           {crewItems.map((crew, index) => (
             <Card key={index} {...crew} />
           ))}
+        </div>
+        <div className="flex flex-col items-center mt-5">
+          <div><WhiteButton text={"CONTACT US"} /></div>
+          <div><RedButton text={"FEEDBACK"} /></div>
         </div>
       </div>
     </div>

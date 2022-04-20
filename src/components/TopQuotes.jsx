@@ -8,7 +8,7 @@ const TopQuotes = () => {
       <div>
         <NavBar />
       </div>
-      <div className="fixed left-28">
+      <div className="fixed left-10 w-screen">
         <RbThumbs />
       </div>
     </div>

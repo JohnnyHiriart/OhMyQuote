@@ -1,75 +1,120 @@
 import React from "react";
-import CategoryBlackBlock from "./CategoryBlackBlock";
-import CategoryRedBlock from "./CategoryRedBlock";
+import CategoryBlock from "./CategoryBlock";
 import NavBar from "./NavBar";
 
-const Category = () => {
-  return (
+
+const Category=()=>{
+  return(
     <div>
       <div>
         <NavBar />
       </div>
-      <div className="flex fixed left-28 p-10 justify-center content-center">
+      <div className="flex fixed left-28 h-screen p-10 justify-center content-center">
         <ul className=" grid lg:grid-cols-5 font-bold lg:grid-rows-3 font-barlow justify-center align-center gap-1 sm:grid-cols-3 sm:grid-rows-5">
-          <CategoryBlackBlock
+          <CategoryBlock
             name={["ART"]}
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"redquote"}
+            bgColor={"black"}
+            textColor={"white"}
           />
-          <CategoryRedBlock
+          <CategoryBlock
             name={["HISTORY"]}
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"black"}
+            bgColor={"redquote"}
+            textColor={"black"}
           />
-          <CategoryBlackBlock
+          <CategoryBlock
             name="BOOKS"
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"redquote"}
+            bgColor={"black"}
+            textColor={"white"}
           />
-          <CategoryRedBlock
+          <CategoryBlock
             name="LIFE"
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"black"}
+            bgColor={"redquote"}
+            textColor={"black"}
           />
-          <CategoryBlackBlock
+          <CategoryBlock
             name="LOVE"
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"redquote"}
+            bgColor={"black"}
+            textColor={"white"}
           />
-          <CategoryRedBlock
+          <CategoryBlock
             name="POP CULTURE"
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"black"}
+            bgColor={"redquote"}
+            textColor={"black"}
           />
-          <CategoryBlackBlock
+          <CategoryBlock
             name="DEATH"
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"redquote"}
+            bgColor={"black"}
+            textColor={"white"}
           />
-          <CategoryRedBlock
+          <CategoryBlock
             name="FUN STUFF"
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"black"}
+            bgColor={"redquote"}
+            textColor={"black"}
           />
-          <CategoryBlackBlock
+          <CategoryBlock
             name="MOVIES"
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"redquote"}
+            bgColor={"black"}
+            textColor={"white"}
           />
-          <CategoryRedBlock
+          <CategoryBlock
             name="ANIMALS"
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"black"}
+            bgColor={"redquote"}
+            textColor={"black"}
           />
-          <CategoryBlackBlock
+          <CategoryBlock
             name="SCIENCE"
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"redquote"}
+            bgColor={"black"}
+            textColor={"white"}
           />
-          <CategoryRedBlock
+          <CategoryBlock
             name="GAMES"
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"black"}
+            bgColor={"redquote"}
+            textColor={"black"}
           />
-          <CategoryBlackBlock
+          <CategoryBlock
             name="TV"
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"redquote"}
+            bgColor={"black"}
+            textColor={"white"}
           />
-          <CategoryRedBlock
+          <CategoryBlock
             name="POLITICS"
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"black"}
+            bgColor={"redquote"}
+            textColor={"black"}
           />
-          <CategoryBlackBlock
+          <CategoryBlock
             name="FAMILY"
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={"Category ", "Category ", "Category "}
+            borderColor={"redquote"}
+            bgColor={"black"}
+            textColor={"white"}
           />
         </ul>
       </div>
