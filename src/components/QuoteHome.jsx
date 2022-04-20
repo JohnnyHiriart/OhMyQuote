@@ -15,9 +15,9 @@ const QuoteHome = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex pt-48 flex-col text-center ">
       <p>{quoteDay.body}</p>
-      <p>{quoteDay.author}</p>
+      <p className="font-bold">{quoteDay.author}</p>
     </div>
   );
 };

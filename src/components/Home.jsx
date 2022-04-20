@@ -3,7 +3,7 @@ import TitleHome from "./TitleHome";
 
 const Home = () => {
   return (
-    <div>
+    <div className="flex justify-center content-center flex-col">
       <TitleHome />
       <QuoteHome />
     </div>

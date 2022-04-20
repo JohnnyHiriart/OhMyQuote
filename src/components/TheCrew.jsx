@@ -1,22 +1,28 @@
 import React from "react";
 import Card from "./Card";
+import NavBar from "./NavBar";
 import WhiteButton from "./WhiteButton";
 import RedButton from "./RedButton";
 
 const TheCrew = () => {
   return (
     <div>
-      <div className="text-redquote text-7xl font-bold m-16 w-11/12 ml-40 justify-center text-center">
-        <h1>THE CREW</h1>
+      <div>
+        <NavBar />
       </div>
-      <div className="flex gap-8 w-11/12 ml-40">
-        {crewItems.map((crew, index) => (
-          <Card key={index} {...crew} />
-        ))}
-      </div>
-      <div className="flex flex-col items-center mt-10">
-        <RedButton text="FEEDBACK" />
-        <WhiteButton text="CONTACT US" />
+      <div className="flex fixed left-28 p-5 content-center justify-center flex-col">
+        <div className="flex text-redquote text-7xl font-bold justify-center">
+          <h1>THE CREW</h1>
+        </div>
+        <div className="flex gap-8  ">
+          {crewItems.map((crew, index) => (
+            <Card key={index} {...crew} />
+          ))}
+        </div>
+        <div className="flex flex-col items-center mt-5">
+          <div><WhiteButton text={"CONTACT US"} /></div>
+          <div><RedButton text={"FEEDBACK"} /></div>
+        </div>
       </div>
     </div>
   );
