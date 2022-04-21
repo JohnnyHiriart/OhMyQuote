@@ -5,7 +5,7 @@ const RedButton = ({ text }) => {
   return (
     <button
       type="button"
-      className="w-40 px-4 py-3 mt-2 mb-4 font-bold text-center text-white border-4 border-white rounded-lg shadow-md bg-redquote hover:text-redquote hover:border-redquote hover:bg-white"
+      className="px-4 py-4 mt-2 mb-4 font-bold text-center text-white border-4 border-white rounded-lg shadow-md w-60 bg-redquote hover:text-redquote hover:border-redquote hover:bg-white"
     >
       {text}
     </button>

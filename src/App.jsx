@@ -11,16 +11,14 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="flex h-screen w-screen justify-around content-center">
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/category" element={<Category />} />
-          <Route path="/quote-me" element={<QuoteMe />} />
-          <Route path="/top-quotes" element={<TopQuotes />} />
-          <Route path="/the-crew" element={<TheCrew />} />
-        </Routes>
-      </div>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/category" element={<Category />} />
+        <Route path="/quote-me" element={<QuoteMe />} />
+        <Route path="/top-quotes" element={<TopQuotes />} />
+        <Route path="/the-crew" element={<TheCrew />} />
+      </Routes>
     </div>
   );
 }
