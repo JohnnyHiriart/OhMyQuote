@@ -5,116 +5,86 @@ import NavBar from "./NavBar";
 const Category = () => {
   return (
     <div>
-      <div>
+      <div className="flex ">
         <NavBar />
       </div>
-      <div className="flex fixed left-28 h-screen p-10 justify-center content-center">
-        <ul className=" grid lg:grid-cols-5 font-bold lg:grid-rows-3 font-barlow justify-center align-center gap-1 sm:grid-cols-3 sm:grid-rows-5">
+      <div className="fixed flex content-center justify-center w-screen h-screen p-10 left-16">
+        <ul className="grid justify-center gap-2 font-bold lg:grid-cols-5 lg:grid-rows-3 align-center sm:grid-cols-3 sm:grid-rows-5">
           <CategoryBlock
             name={["ART"]}
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="redquote"
-            bgColor="black"
-            textColor="white"
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
           <CategoryBlock
             name={["HISTORY"]}
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="black"
-            bgColor="redquote"
-            textColor="black"
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
           <CategoryBlock
-            name="BOOKS"
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="redquote"
-            bgColor="black"
-            textColor="white"
+            name={["BOOKS"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
           <CategoryBlock
-            name="LIFE"
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="black"
-            bgColor="redquote"
-            textColor="black"
+            name={["LIFE"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
           <CategoryBlock
-            name="LOVE"
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="redquote"
-            bgColor="black"
-            textColor="white"
+            name={["LOVE"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
           <CategoryBlock
-            name="POP CULTURE"
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="black"
-            bgColor="redquote"
-            textColor="black"
+            name={["POP CULTURE"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
           <CategoryBlock
-            name="DEATH"
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="redquote"
-            bgColor="black"
-            textColor="white"
+            name={["DEATH"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
           <CategoryBlock
-            name="FUN STUFF"
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="black"
-            bgColor="redquote"
-            textColor="black"
+            name={["FUN STUFF"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
           <CategoryBlock
-            name="MOVIES"
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="redquote"
-            bgColor="black"
-            textColor="white"
+            name={["MOVIES"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
           <CategoryBlock
-            name="ANIMALS"
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="black"
-            bgColor="redquote"
-            textColor="black"
+            name={["ANIMALS"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
           <CategoryBlock
-            name="SCIENCE"
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="redquote"
-            bgColor="black"
-            textColor="white"
+            name={["SCIENCE"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
           <CategoryBlock
-            name="GAMES"
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="black"
-            bgColor="redquote"
-            textColor="black"
+            name={["GAMES"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
           <CategoryBlock
-            name="TV"
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="redquote"
-            bgColor="black"
-            textColor="white"
+            name={["TV"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
           <CategoryBlock
-            name="POLITICS"
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="black"
-            bgColor="redquote"
-            textColor="black"
+            name={["POLITICS"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
           <CategoryBlock
-            name="FAMILY"
-            subCategories={("Category ", "Category ", "Category ")}
-            borderColor="redquote"
-            bgColor="black"
-            textColor="white"
-          />
+            name={["FAMILY"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
+          /> 
         </ul>
       </div>
     </div>
