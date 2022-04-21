@@ -1,5 +1,4 @@
 import React from "react";
-// import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Category from "./components/Category";
 import QuoteMe from "./components/QuoteMe";
@@ -11,7 +10,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="flex h-screen w-screen justify-around content-center">
+    <div className="flex content-center justify-around w-screen h-screen">
       <div>
         <Routes>
           <Route path="/" element={<Home />} />

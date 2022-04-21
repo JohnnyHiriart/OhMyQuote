@@ -8,7 +8,7 @@ const TopQuotes = () => {
       <div>
         <NavBar />
       </div>
-      <div className="fixed flex justify-center font-bold text-redquote text-7xl">
+      <div className="flex justify-center font-bold text-redquote text-7xl">
         <h1>TOP QUOTES</h1>
       </div>
       <div className="flex flex-col w-screen left-16">
