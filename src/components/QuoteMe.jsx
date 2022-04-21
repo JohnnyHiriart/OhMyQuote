@@ -14,12 +14,12 @@ const QuoteMe = () => {
           <h1>QUOTE ME</h1>
         </div>
         <div className="flex w-full">
-          <div className="flex flex-col w-full border-4 rounded-lg ml-28 h-96 bg-redquote bg-opacity-5 border-redquote"></div>
+          <div className="flex flex-col w-full border-4 rounded-lg ml-28 h-96 bg-redquote bg-opacity-5 border-redquote" />
           <div className="flex flex-col ml-5 space-y-28">
-            <button>
+            <button type="button">
               <img src="/src/assets/thumbs-up_1f44d.png" alt="thumb_up" />
             </button>
-            <button>
+            <button type="button">
               <img src="/src/assets/thumbs-down_1f44e.png" alt="thumb_down" />
             </button>
           </div>
@@ -38,7 +38,7 @@ const QuoteMe = () => {
         <div className="flex flex-col">
           <RedButton text="CUSTOMIZE" />
         </div>
-        <button className="flex flex-col mt-5">
+        <button type="button" className="flex flex-col mt-5">
           <img src="/src/assets/arrow.png" alt="arrow" />
         </button>
       </div>
