@@ -1,11 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const WhiteButton = ({ text }) => {
-    return (
-<button className = "bg-white rounded-lg px-4 py-3 mt-2 border-4 shadow-md border-redquote font-bold text-redquote text-center  hover:text-white hover:bg-redquote w-40">
-    {text}
-  </button>
+  return (
+    <button
+      type="button"
+      className="px-4 py-4 mt-2 font-bold text-center bg-white border-4 rounded-lg shadow-md w-60 border-redquote hover:border-white text-redquote hover:text-white hover:bg-redquote"
+    >
+      {text}
+    </button>
   );
-  };
+};
+
+WhiteButton.propTypes = {
+  text: PropTypes.string.isRequired,
+};
 
 export default WhiteButton;

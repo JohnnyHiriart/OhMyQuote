@@ -1,11 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const RedButton = ({ text }) => {
-    return (
-<button className = "bg-redquote rounded-lg px-4 py-3 mt-2 border-4 shadow-md border-white text-white mb-4 font-bold text-center hover:text-redquote hover:bg-white w-40">
-    {text}
-  </button>
+  return (
+    <button
+      type="button"
+      className="px-4 py-4 mt-2 mb-4 font-bold text-center text-white border-4 border-white rounded-lg shadow-md w-60 bg-redquote hover:text-redquote hover:border-redquote hover:bg-white"
+    >
+      {text}
+    </button>
   );
-  };
+};
+
+RedButton.propTypes = {
+  text: PropTypes.string.isRequired,
+};
 
 export default RedButton;

@@ -1,76 +1,90 @@
 import React from "react";
-import CategoryBlackBlock from "./CategoryBlackBlock";
-import CategoryRedBlock from "./CategoryRedBlock";
+import CategoryBlock from "./CategoryBlock";
 import NavBar from "./NavBar";
 
 const Category = () => {
   return (
     <div>
-      <div>
+      <div className="flex ">
         <NavBar />
       </div>
-      <div className="flex fixed left-28 p-10 justify-center content-center">
-        <ul className=" grid lg:grid-cols-5 font-bold lg:grid-rows-3 font-barlow justify-center align-center gap-1 sm:grid-cols-3 sm:grid-rows-5">
-          <CategoryBlackBlock
+      <div className="fixed flex content-center justify-center w-screen h-screen p-10 left-16">
+        <ul className="grid justify-center gap-2 font-bold lg:grid-cols-5 lg:grid-rows-3 align-center sm:grid-cols-3 sm:grid-rows-5">
+          <CategoryBlock
             name={["ART"]}
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
-          <CategoryRedBlock
+          <CategoryBlock
             name={["HISTORY"]}
-            subCategories={["Category ", "Category ", "Category "]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
-          <CategoryBlackBlock
-            name="BOOKS"
-            subCategories={["Category ", "Category ", "Category "]}
+          <CategoryBlock
+            name={["BOOKS"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
-          <CategoryRedBlock
-            name="LIFE"
-            subCategories={["Category ", "Category ", "Category "]}
+          <CategoryBlock
+            name={["LIFE"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
-          <CategoryBlackBlock
-            name="LOVE"
-            subCategories={["Category ", "Category ", "Category "]}
+          <CategoryBlock
+            name={["LOVE"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
-          <CategoryRedBlock
-            name="POP CULTURE"
-            subCategories={["Category ", "Category ", "Category "]}
+          <CategoryBlock
+            name={["POP CULTURE"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
-          <CategoryBlackBlock
-            name="DEATH"
-            subCategories={["Category ", "Category ", "Category "]}
+          <CategoryBlock
+            name={["DEATH"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
-          <CategoryRedBlock
-            name="FUN STUFF"
-            subCategories={["Category ", "Category ", "Category "]}
+          <CategoryBlock
+            name={["FUN STUFF"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
-          <CategoryBlackBlock
-            name="MOVIES"
-            subCategories={["Category ", "Category ", "Category "]}
+          <CategoryBlock
+            name={["MOVIES"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
-          <CategoryRedBlock
-            name="ANIMALS"
-            subCategories={["Category ", "Category ", "Category "]}
+          <CategoryBlock
+            name={["ANIMALS"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
-          <CategoryBlackBlock
-            name="SCIENCE"
-            subCategories={["Category ", "Category ", "Category "]}
+          <CategoryBlock
+            name={["SCIENCE"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
-          <CategoryRedBlock
-            name="GAMES"
-            subCategories={["Category ", "Category ", "Category "]}
+          <CategoryBlock
+            name={["GAMES"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
-          <CategoryBlackBlock
-            name="TV"
-            subCategories={["Category ", "Category ", "Category "]}
+          <CategoryBlock
+            name={["TV"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
           />
-          <CategoryRedBlock
-            name="POLITICS"
-            subCategories={["Category ", "Category ", "Category "]}
+          <CategoryBlock
+            name={["POLITICS"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={true}
           />
-          <CategoryBlackBlock
-            name="FAMILY"
-            subCategories={["Category ", "Category ", "Category "]}
-          />
+          <CategoryBlock
+            name={["FAMILY"]}
+            subCategories={[{nameSubCat:"Giacometti", linkSubCat:"https://fr.wikipedia.org/wiki/Alberto_Giacometti"}, {nameSubCat:"Banksy", linkSubCat:"https://fr.wikipedia.org/wiki/Banksy"}, {nameSubCat:"Basquiat", linkSubCat:"https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat"}]}
+            isBlack={false}
+          /> 
         </ul>
       </div>
     </div>
