@@ -23,7 +23,7 @@ const links = [
 
 const NavBar = () => {
   return (
-    <nav className="flex fixed left-0 flex-col content-around mr-5 ml-2 pr-4 border-r-4 border-redquote">
+    <nav className="fixed left-0 flex flex-col content-around border-r-4 mr-autoauto ml- pr-7 border-redquote">
       <Link to="/">
         <Logo />
       </Link>
@@ -31,7 +31,7 @@ const NavBar = () => {
         {links.map((link, index) => (
           <li
             key={index}
-            className="flex p-5 m-1 text-nav border-20 hover:font-bold hover:text-redquote  border-t-black border-t-2 text-justify [writing-mode:vertical-rl] [text-orientation:upright]"
+            className="flex p-8 m-auto mt-auto text-nav border-20 hover:font-bold hover:text-redquote  border-t-black border-t-2 text-justify [writing-mode:vertical-rl] [text-orientation:upright]"
           >
             <Link to={link.path}>{link.name}</Link>
           </li>
