@@ -27,11 +27,12 @@ const NavBar = () => {
       <Link to="/">
         <Logo />
       </Link>
-      <ul className="flex flex-col pt-10">
+      <ul className="flex flex-col">
         {links.map((link, index) => (
           <li
             key={index}
             className="flex p-8 m-auto mt-auto text-nav border-20 hover:font-bold hover:text-redquote  border-t-black border-t-2 text-justify [writing-mode:vertical-rl] [text-orientation:upright]"
+
           >
             <Link to={link.path}>{link.name}</Link>
           </li>

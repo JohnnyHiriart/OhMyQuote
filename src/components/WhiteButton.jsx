@@ -5,7 +5,7 @@ const WhiteButton = ({ text }) => {
   return (
     <button
       type="button"
-      className="w-40 px-4 py-3 mt-2 font-bold text-center bg-white border-4 rounded-lg shadow-md border-redquote hover:border-white text-redquote hover:text-white hover:bg-redquote"
+      className="px-4 py-4 mt-2 font-bold text-center bg-white border-4 rounded-lg shadow-md w-60 border-redquote hover:border-white text-redquote hover:text-white hover:bg-redquote"
     >
       {text}
     </button>
