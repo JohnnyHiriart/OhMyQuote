@@ -1,42 +1,42 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import CategoryText from "./CategoryText";
+
 
 const CategoryBlock = ({
   name,
   subCategories,
-  borderColor,
-  bgColor,
-  textColor,
+  isBlack=false
 }) => {
-  const [content, setContent] = useState(`${name}`);
-  console.log(content.length);
-
+  const [content, setContent] = useState(name);
   return (
-    <div
-      onMouseOver={() => setContent(subCategories)}
-      onMouseLeave={() => setContent(name)}
-      // CHECKER ON FOCUS
-      onFocus={() => setContent(name)}
-      className={`rounded-2xl hover:scale-125 hover:border-${borderColor} hover:border-2 bg-${bgColor} text-center text-${textColor} p-20`}
-    >
-      {content.length === 0 ? (
-        <CategoryText content={content} />
-      ) : (
-        <div className="flex content-center justify-center leading-10 text-center hover:cursor-pointer">
-          {content}
+    isBlack
+    ? <div
+        onMouseOver={() => setContent(subCategories)}
+        onMouseLeave={() => setContent(name)}
+        className={`flex items-center justify-center rounded-2xl hover:scale-125 hover:border-black hover:border-2 bg-redquote text-black w-[15vw] h-[30vh]`}>
+        <div className="">
+        {content === name 
+        ? content.map((word)=> <div className="hover:cursor-pointer">{word}</div>)
+        : content.map((word)=> <a className="flex justify-center leading-10 hover:cursor-pointer" href={word.linkSubCat}>{word.nameSubCat}</a>)}
         </div>
-      )}
-    </div>
+      </div>
+    :<div
+        onMouseOver={() => setContent(subCategories)}
+        onMouseLeave={() => setContent(name)}
+        className={`flex items-center justify-center rounded-2xl hover:scale-125 hover:border-redquote hover:border-2 bg-black text-white w-[15vw] h-[30vh]`}>
+        <div className="">
+        {content === name 
+        ? content.map((word)=> <div className="hover:cursor-pointer">{word}</div>)
+        : content.map((word)=> <a className="flex justify-center leading-10 hover:cursor-pointer" href={word.linkSubCat}>{word.nameSubCat}</a>)}
+        </div>
+      </div>
   );
 };
 
 CategoryBlock.propTypes = {
   name: PropTypes.string.isRequired,
   subCategories: PropTypes.string.isRequired,
-  borderColor: PropTypes.string.isRequired,
-  bgColor: PropTypes.string.isRequired,
-  textColor: PropTypes.string.isRequired,
+  isBlack: PropTypes.bool.isRequired
 };
 
 export default CategoryBlock;
