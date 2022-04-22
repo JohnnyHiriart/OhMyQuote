@@ -4,8 +4,8 @@ import NavBar from "./NavBar";
 
 const Category = () => {
   return (
-    <div>
-      <div className="flex ">
+    <div className="flex justify-around">
+      <div className="flex">
         <NavBar />
       </div>
       <div className="fixed flex content-center justify-center w-screen h-screen p-10 left-16">
