@@ -27,11 +27,11 @@ const NavBar = () => {
       <Link to="/">
         <Logo />
       </Link>
-      <ul className="flex flex-col">
+      <ul className="flex flex-col items-center justify-around m-2">
         {links.map((link, index) => (
           <li
             key={index}
-            className="flex p-6 m-1 text-[1.18vh] border-20 hover:font-bold hover:text-redquote  border-t-redquote border-t-2 text-justify [writing-mode:vertical-rl] [text-orientation:upright]"
+            className="text-[1.18vh] border-20 py-7 px-3 hover:font-bold hover:text-redquote border-t-redquote border-t-2 text-justify [writing-mode:vertical-rl] [text-orientation:upright]"
           >
             <Link to={link.path}>{link.name}</Link>
           </li>
