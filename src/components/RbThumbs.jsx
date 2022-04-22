@@ -1,5 +1,5 @@
 import React from "react";
-import QuoteHome from "./QuoteHome"
+import QuoteHome from "./QuoteHome";
 
 const RbThumbs = () => {
   return (
@@ -10,7 +10,9 @@ const RbThumbs = () => {
       <div className="flex items-center content-center justify-center w-3/5 border-4 rounded-lg border-redquote bg-redquote bg-opacity-5">
         {/* box with quote */}
         <div>{/* first quote img */}</div>
-        <div className="h-[10vh] flex items-center"><QuoteHome /></div>
+        <div className="h-[10vw] flex items-center">
+          <QuoteHome textSize="text-[1.5vw]" />
+        </div>
         <div>{/* second quote img */}</div>
       </div>
     </div>
