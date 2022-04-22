@@ -2,8 +2,7 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
-const QuoteHome = ({padding, height}) => {
-
+const QuoteHome = ({ padding, height, textSize }) => {
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -21,7 +20,9 @@ const QuoteHome = ({padding, height}) => {
   }, []);
 
   return (
-    <div className={`flex ${padding} text-xl flex-col text-center ${height}`}>
+    <div
+      className={`flex ${padding} ${textSize} flex-col text-center ${height}`}
+    >
       <p>{quoteDay.quoteText}</p>
       <p className="font-bold">{quoteDay.quoteAuthor}</p>
     </div>
@@ -31,6 +32,7 @@ const QuoteHome = ({padding, height}) => {
 QuoteHome.propTypes = {
   padding: PropTypes.string.isRequired,
   height: PropTypes.string.isRequired,
+  textSize: PropTypes.string.isRequired,
 };
 
 export default QuoteHome;

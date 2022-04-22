@@ -7,7 +7,7 @@ const Home = () => {
     <div className="flex justify-between content-center flex-col w-[100vw] h-[100vh]">
       <TitleHome />
       <Carousel />
-      <QuoteHome padding={"pb-[10vh]"} height={"h-[15vh]"} />
+      <QuoteHome padding="pb-[10vh]" height="h-[15vh]" />
     </div>
   );
 };
