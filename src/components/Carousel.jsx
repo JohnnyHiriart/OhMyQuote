@@ -14,7 +14,21 @@ const Carousel = () => {
     setIsActiveSlide4(false);
   }
 
+  function handleKeyDownActiveSlide1() {
+    setIsActiveSlide1(!isActiveSlide1);
+    setIsActiveSlide2(false);
+    setIsActiveSlide3(false);
+    setIsActiveSlide4(false);
+  }
+
   function handleClickActiveSlide2() {
+    setIsActiveSlide2(!isActiveSlide2);
+    setIsActiveSlide1(false);
+    setIsActiveSlide3(false);
+    setIsActiveSlide4(false);
+  }
+
+  function handleKeyDownActiveSlide2() {
     setIsActiveSlide2(!isActiveSlide2);
     setIsActiveSlide1(false);
     setIsActiveSlide3(false);
@@ -28,7 +42,21 @@ const Carousel = () => {
     setIsActiveSlide4(false);
   }
 
+  function handleKeyDownActiveSlide3() {
+    setIsActiveSlide3(!isActiveSlide3);
+    setIsActiveSlide1(false);
+    setIsActiveSlide2(false);
+    setIsActiveSlide4(false);
+  }
+
   function handleClickActiveSlide4() {
+    setIsActiveSlide4(!isActiveSlide4);
+    setIsActiveSlide1(false);
+    setIsActiveSlide2(false);
+    setIsActiveSlide3(false);
+  }
+
+  function handleKeyDownActiveSlide4() {
     setIsActiveSlide4(!isActiveSlide4);
     setIsActiveSlide1(false);
     setIsActiveSlide2(false);
@@ -42,18 +70,24 @@ const Carousel = () => {
           <div
             className={
               isActiveSlide1
-                ? "shadow-shadowcarousel1 cursor-pointer h-80 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden w-[30rem] transition-[width] duration-200 ease-linear"
-                : "shadow-shadowcarousel1 cursor-pointer h-80 w-16 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
+                ? "shadow-shadowcarousel1 cursor-pointer h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden w-[35rem] transition-[width] duration-200 ease-linear"
+                : "shadow-shadowcarousel1 cursor-pointer h-96 w-20 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
             }
             onClick={!isActiveSlide1 && handleClickActiveSlide1}
+            onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide1}
+            role="button"
+            tabIndex={0}
           >
             <div
               className={
                 isActiveSlide1
-                  ? "bg-[url('../src/assets/categories1.jpg')] scale-1 w-[30rem] h-80 shadow-shadowcarousel2 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('../src/assets/categories3.jpg')] scale-150 w-16 h-80 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  ? "bg-[url('../src/assets/categories1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel2 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('../src/assets/categories3.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
               onClick={!isActiveSlide1 && handleClickActiveSlide1}
+              onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide1}
+              role="button"
+              tabIndex={0}
             >
               <div
                 className={
@@ -62,9 +96,12 @@ const Carousel = () => {
                     : "flex flex-col justify-end h-full scale-[0.6666666666666] transition-[all] duration-200 ease-linear"
                 }
                 onClick={!isActiveSlide1 && handleClickActiveSlide1}
+                onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide1}
+                role="button"
+                tabIndex={0}
               >
-                <div className="flex w-[1000rem]">
-                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.7rem] rounded-[50%] flex justify-center items-center">
+                <div className="flex ml-[0.5rem] w-[1000rem]">
+                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.7rem] rounded-full flex justify-center items-center">
                     <img
                       className="w-1/2"
                       src="../src/assets/smal-logo-oh-my-quote.png"
@@ -78,6 +115,9 @@ const Carousel = () => {
                         : "mt-3 ml-4 transition-[all] duration-200 ease-linear text-white opacity-0"
                     }
                     onClick={!isActiveSlide1 && handleClickActiveSlide1}
+                    onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide1}
+                    role="button"
+                    tabIndex={0}
                   >
                     <h4 className="text-[1.5rem] drop-shadow-[0_1px_1px_black] [line-height:0.9rem]">
                       Categories
@@ -95,18 +135,24 @@ const Carousel = () => {
           <div
             className={
               isActiveSlide2
-                ? "shadow-shadowcarousel1 cursor-pointer h-80 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear w-[30rem]"
-                : "shadow-shadowcarousel1 cursor-pointer h-80 w-16 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
+                ? "shadow-shadowcarousel1 cursor-pointer h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden w-[35rem] transition-[width] duration-200 ease-linear"
+                : "shadow-shadowcarousel1 cursor-pointer h-96 w-20 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
             }
             onClick={!isActiveSlide2 && handleClickActiveSlide2}
+            onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide2}
+            role="button"
+            tabIndex={0}
           >
             <div
               className={
                 isActiveSlide2
-                  ? "bg-[url('../src/assets/quoteme1.jpg')] scale-1 w-[30rem] h-80 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('../src/assets/quoteme2.jpg')] scale-150 w-16 h-80 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  ? "bg-[url('../src/assets/quoteme1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('../src/assets/quoteme2.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
               onClick={!isActiveSlide2 && handleClickActiveSlide2}
+              onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide2}
+              role="button"
+              tabIndex={0}
             >
               <div
                 className={
@@ -115,8 +161,11 @@ const Carousel = () => {
                     : "flex flex-col justify-end h-full scale-[0.6666666666666] transition-[all] duration-200 ease-linear"
                 }
                 onClick={!isActiveSlide2 && handleClickActiveSlide2}
+                onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide2}
+                role="button"
+                tabIndex={0}
               >
-                <div className="flex w-[1000rem]">
+                <div className="flex ml-[0.5rem] w-[1000rem]">
                   <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.7rem] rounded-[50%] flex justify-center items-center">
                     <svg
                       className="w-1/2 fill-current text-redquote"
@@ -134,6 +183,9 @@ const Carousel = () => {
                         : "mt-3 ml-4 transition-[all] duration-200 ease-linear text-white opacity-0"
                     }
                     onClick={!isActiveSlide2 && handleClickActiveSlide2}
+                    onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide2}
+                    role="button"
+                    tabIndex={0}
                   >
                     <h4 className="text-[1.5rem] drop-shadow-[0_1px_1px_black] [line-height:0.9rem]">
                       Quote Me
@@ -151,18 +203,24 @@ const Carousel = () => {
           <div
             className={
               isActiveSlide3
-                ? "shadow-shadowcarousel1 cursor-pointer h-80 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear w-[30rem]"
-                : "shadow-shadowcarousel1 cursor-pointer h-80 w-16 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
+                ? "shadow-shadowcarousel1 cursor-pointer h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden w-[35rem] transition-[width] duration-200 ease-linear"
+                : "shadow-shadowcarousel1 cursor-pointer h-96 w-20 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
             }
             onClick={!isActiveSlide3 && handleClickActiveSlide3}
+            onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide3}
+            role="button"
+            tabIndex={0}
           >
             <div
               className={
                 isActiveSlide3
-                  ? "bg-[url('../src/assets/top1.jpg')] scale-1 w-[30rem] h-80 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('../src/assets/top2.jpg')] scale-150 w-16 h-80 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  ? "bg-[url('../src/assets/top1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('../src/assets/top2.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
               onClick={!isActiveSlide3 && handleClickActiveSlide3}
+              onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide3}
+              role="button"
+              tabIndex={0}
             >
               <div
                 className={
@@ -171,8 +229,11 @@ const Carousel = () => {
                     : "flex flex-col justify-end h-full scale-[0.6666666666666] transition-[all] duration-200 ease-linear"
                 }
                 onClick={!isActiveSlide3 && handleClickActiveSlide3}
+                onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide3}
+                role="button"
+                tabIndex={0}
               >
-                <div className="flex w-[1000rem]">
+                <div className="flex ml-[0.5rem] w-[1000rem]">
                   <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.7rem] rounded-[50%] flex justify-center items-center">
                     <svg
                       className="w-1/2 fill-current text-redquote"
@@ -190,6 +251,9 @@ const Carousel = () => {
                         : "mt-3 ml-4 transition-[all] duration-200 ease-linear text-white opacity-0"
                     }
                     onClick={!isActiveSlide3 && handleClickActiveSlide3}
+                    onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide3}
+                    role="button"
+                    tabIndex={0}
                   >
                     <h4 className="text-[1.5rem] drop-shadow-[0_1px_1px_black] [line-height:0.9rem]">
                       Top Quotes
@@ -207,18 +271,24 @@ const Carousel = () => {
           <div
             className={
               isActiveSlide4
-                ? "shadow-shadowcarousel1 cursor-pointer h-80 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear w-[30rem]"
-                : "shadow-shadowcarousel1 cursor-pointer h-80 w-16 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
+                ? "shadow-shadowcarousel1 cursor-pointer h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden w-[35rem] transition-[width] duration-200 ease-linear"
+                : "shadow-shadowcarousel1 cursor-pointer h-96 w-20 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
             }
             onClick={!isActiveSlide4 && handleClickActiveSlide4}
+            onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide4}
+            role="button"
+            tabIndex={0}
           >
             <div
               className={
                 isActiveSlide4
-                  ? "bg-[url('../src/assets/crew1.jpg')] scale-1 w-[30rem] h-80 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('../src/assets/crew2.jpg')] scale-150 w-16 h-80 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  ? "bg-[url('../src/assets/crew1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('../src/assets/crew2.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
               onClick={!isActiveSlide4 && handleClickActiveSlide4}
+              onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide4}
+              role="button"
+              tabIndex={0}
             >
               <div
                 className={
@@ -227,8 +297,11 @@ const Carousel = () => {
                     : "flex flex-col justify-end h-full scale-[0.6666666666666] transition-[all] duration-200 ease-linear"
                 }
                 onClick={!isActiveSlide4 && handleClickActiveSlide4}
+                onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide4}
+                role="button"
+                tabIndex={0}
               >
-                <div className="flex w-[1000rem]">
+                <div className="flex ml-[0.5rem] w-[1000rem]">
                   <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.7rem] rounded-[50%] flex justify-center items-center">
                     <svg
                       className="w-1/2 fill-current text-redquote"
@@ -246,6 +319,9 @@ const Carousel = () => {
                         : "mt-3 ml-4 transition-[all] duration-200 ease-linear text-white opacity-0"
                     }
                     onClick={!isActiveSlide4 && handleClickActiveSlide4}
+                    onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide4}
+                    role="button"
+                    tabIndex={0}
                   >
                     <h4 className="text-[1.5rem] drop-shadow-[0_1px_1px_black] [line-height:0.9rem]">
                       The Crew

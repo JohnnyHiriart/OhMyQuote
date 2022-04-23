@@ -21,9 +21,9 @@ const QuoteHome = ({ padding, height, textSize }) => {
 
   return (
     <div
-      className={`flex ${padding} ${textSize} flex-col text-center ${height}`}
+      className={`flex ${padding} ${textSize} flex-col items-center ${height}`}
     >
-      <p>{quoteDay.quoteText}</p>
+      <p className="max-w-[850px]">{quoteDay.quoteText}</p>
       <p className="font-bold">{quoteDay.quoteAuthor}</p>
     </div>
   );

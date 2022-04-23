@@ -7,8 +7,8 @@ const CategoryBlock = ({ name, subCategories, isBlack = false }) => {
     <div
       onMouseOver={() => setContent(subCategories)}
       onMouseLeave={() => setContent(name)}
-      onMouseFocus={() => setContent(subCategories)}
-      className="flex items-center justify-center rounded-2xl hover:scale-125 hover:border-black hover:border-2 bg-redquote text-black w-[15vw] h-[30vh]"
+      onFocus={() => setContent(subCategories)}
+      className="flex items-center justify-center rounded-2xl hover:scale-125 hover:border-black hover:border-2 bg-redquote text-black hover:text-white w-[15vw] h-[30vh]"
     >
       <div className="">
         {content === name
@@ -17,7 +17,7 @@ const CategoryBlock = ({ name, subCategories, isBlack = false }) => {
             ))
           : content.map((word) => (
               <a
-                className="flex justify-center leading-10 hover:cursor-pointer"
+                className="flex justify-center leading-10 hover:cursor-pointer hover:text-black"
                 href={word.linkSubCat}
               >
                 {word.nameSubCat}
@@ -29,8 +29,8 @@ const CategoryBlock = ({ name, subCategories, isBlack = false }) => {
     <div
       onMouseOver={() => setContent(subCategories)}
       onMouseLeave={() => setContent(name)}
-      onMouseFocus={() => setContent(subCategories)}
-      className="flex items-center justify-center rounded-2xl hover:scale-125 hover:border-redquote hover:border-2 bg-black text-white w-[15vw] h-[30vh]"
+      onFocus={() => setContent(subCategories)}
+      className="flex items-center justify-center rounded-2xl hover:scale-125 hover:border-redquote hover:border-2 bg-black text-white hover:text-white w-[15vw] h-[30vh]"
     >
       <div className="">
         {content === name
@@ -39,7 +39,7 @@ const CategoryBlock = ({ name, subCategories, isBlack = false }) => {
             ))
           : content.map((word) => (
               <a
-                className="flex justify-center leading-10 hover:cursor-pointer"
+                className="flex justify-center leading-10 hover:cursor-pointer hover:text-redquote"
                 href={word.linkSubCat}
               >
                 {word.nameSubCat}

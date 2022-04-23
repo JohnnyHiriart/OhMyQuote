@@ -12,11 +12,11 @@ const TopQuotes = () => {
         <h1 className="">TOP QUOTES</h1>
       </div>
       <div className="pt-[10vh]flex flex-col w-screen left-16">
-        <RbThumbs />
-        <RbThumbs />
-        <RbThumbs />
-        <RbThumbs />
-        <RbThumbs />
+        <RbThumbs nbr="1" />
+        <RbThumbs nbr="2" />
+        <RbThumbs nbr="3" />
+        <RbThumbs nbr="4" />
+        <RbThumbs nbr="5" />
       </div>
     </div>
   );
