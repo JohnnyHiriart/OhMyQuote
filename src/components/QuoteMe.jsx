@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./NavBar";
 import WhiteButton from "./WhiteButton";
 import RedButton from "./RedButton";
+import QuoteHome from "./QuoteHome";
 
 const QuoteMe = () => {
   return (
@@ -26,6 +27,9 @@ const QuoteMe = () => {
                 src="/src/assets/smal-logo-oh-my-quote2.png"
                 alt="opening_quote"
               />
+            </div>
+            <div className="flex items-center">
+              <QuoteHome textSize="text-[1.7vw]" />
             </div>
             <div className="flex items-end w-40">
               <img
