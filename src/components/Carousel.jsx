@@ -104,7 +104,7 @@ const Carousel = () => {
                   <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.7rem] rounded-full flex justify-center items-center">
                     <img
                       className="w-1/2"
-                      src="../src/assets/smal-logo-oh-my-quote.png"
+                      src="/static/img/smal-logo-oh-my-quote.png"
                       alt="logoohmyquote"
                     />
                   </div>
@@ -146,8 +146,8 @@ const Carousel = () => {
             <div
               className={
                 isActiveSlide2
-                  ? "bg-[url('../src/assets/quoteme1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('../src/assets/quoteme2.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  ? "bg-[url('/static/img/quoteme1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('/static/img/quoteme2.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
               onClick={!isActiveSlide2 && handleClickActiveSlide2}
               onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide2}
@@ -214,8 +214,8 @@ const Carousel = () => {
             <div
               className={
                 isActiveSlide3
-                  ? "bg-[url('../src/assets/top1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('../src/assets/top2.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  ? "bg-[url('/static/img/top1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('/static/img/top2.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
               onClick={!isActiveSlide3 && handleClickActiveSlide3}
               onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide3}
@@ -282,8 +282,8 @@ const Carousel = () => {
             <div
               className={
                 isActiveSlide4
-                  ? "bg-[url('../src/assets/crew1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('../src/assets/crew2.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  ? "bg-[url('/static/img/crew1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('/static/img/crew2.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
               onClick={!isActiveSlide4 && handleClickActiveSlide4}
               onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide4}
