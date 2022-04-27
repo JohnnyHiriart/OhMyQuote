@@ -81,8 +81,8 @@ const Carousel = () => {
             <div
               className={
                 isActiveSlide1
-                  ? "bg-[url('../dist/assets/categories1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel2 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('../src/assets/categories3.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  ? "bg-[url('/static/img/categories1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel2 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('/static/img/categories3.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
               onClick={!isActiveSlide1 && handleClickActiveSlide1}
               onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide1}
