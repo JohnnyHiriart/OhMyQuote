@@ -24,7 +24,7 @@ const QuoteMe = () => {
           <div className="flex flex-row justify-between w-full border-4 rounded-lg ml-28 h-96 bg-redquote bg-opacity-5 border-redquote">
             <div className="w-40">
               <img
-                src="/src/assets/smal-logo-oh-my-quote2.png"
+                src="/static/img/smal-logo-oh-my-quote2.png"
                 alt="opening_quote"
               />
             </div>
@@ -33,17 +33,17 @@ const QuoteMe = () => {
             </div>
             <div className="flex items-end w-40">
               <img
-                src="/src/assets/smal-logo-oh-my-quote1.png"
+                src="/static/img/smal-logo-oh-my-quote1.png"
                 alt="closing_quote"
               />
             </div>
           </div>
           <div className="flex flex-col ml-5 space-y-28">
             <button type="button">
-              <img src="/src/assets/thumbs-up_1f44d.png" alt="thumb_up" />
+              <img src="/static/img/thumbs-up_1f44d.png" alt="thumb_up" />
             </button>
             <button type="button">
-              <img src="/src/assets/thumbs-down_1f44e.png" alt="thumb_down" />
+              <img src="/static/img/thumbs-down_1f44e.png" alt="thumb_down" />
             </button>
           </div>
         </div>
@@ -62,7 +62,7 @@ const QuoteMe = () => {
           <RedButton text="CUSTOMIZE" />
         </div>
         <button type="button" className="flex flex-col mt-5">
-          <img src="/src/assets/arrow.png" alt="arrow" />
+          <img src="/static/img/arrow.png" alt="arrow" />
         </button>
       </div>
     </div>
