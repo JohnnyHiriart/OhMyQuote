@@ -51,7 +51,7 @@ const TheCrew = () => {
         <div className="flex flex-col items-center mt-5">
           <div>
             <a
-              class="footer__mailing"
+              className="footer__mailing"
               href="mailto:ohmyquote@gmail.com"
               title="Click pour nous joindre"
             >
