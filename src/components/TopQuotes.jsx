@@ -4,11 +4,11 @@ import NavBar from "./NavBar";
 
 const TopQuotes = () => {
   return (
-    <div>
+    <div classes="flex content-center justify-center">
       <div>
         <NavBar />
       </div>
-      <div className="flex justify-center font-bold text-redquote text-7xl">
+      <div className="flex content-center justify-center font-bold text-redquote text-7xl">
         <h1 className="">TOP QUOTES</h1>
       </div>
       <div className="pt-[10vh]flex flex-col w-screen left-16">
