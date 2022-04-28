@@ -21,6 +21,10 @@ module.exports = {
       colors: {
         redquote: "#FF1616",
       },
+      backgroundImage: {
+        redfeedback:
+          "linear-gradient(0deg, rgba(255, 22, 22, 0.05), rgba(255, 22, 22, 0.05)), #FFFFFF",
+      },
       fontFamily: {
         sans: ["Jost", "sans-serif"],
         barlow: ["Barlow Condensed", "sans-serif"],
