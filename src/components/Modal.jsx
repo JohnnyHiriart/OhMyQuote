@@ -9,8 +9,10 @@ const Modal = ({ closedModal }) => {
       <button type="button" className="close" onClick={closedModal}>
         <span>&times;</span>
       </button>
-      <div className="flex flex-col flex-wrap items-start content-center justify-start w-full h-full p-2 m-2">
-        <h1 className="text-4xl font-bold text-redquote">FEEDBACK</h1>
+      <div className="flex flex-col flex-wrap content-center justify-start w-full h-full p-2 m-2">
+        <div className="flex flex-row content-center justify-center">
+          <h1 className="text-4xl font-bold text-redquote">FEEDBACK</h1>
+        </div>
         <p className="p-2 leading-5">
           Sharing is caring! <br /> Please let us know how much you love <br />{" "}
           or hate us. Both is good too.
@@ -23,10 +25,10 @@ const Modal = ({ closedModal }) => {
         </div>
         <input
           type="text"
-          className="p-1 mt-2 mb-2 border-4 w-80 border-redquote"
+          className="p-1 mt-2 mb-2 border-4 w-[22rem] border-redquote"
           placeholder="Your Email"
         />
-        <button type="button" className="ml-7">
+        <button type="button">
           <WhiteButton text="SUBMIT" />
         </button>
       </div>
