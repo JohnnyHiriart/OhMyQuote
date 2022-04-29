@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const CategoryBlock = ({ name, subCategories, isBlack = false, setGenre }) => {
+const CategoryBlock = ({ name, subCategories, isBlack = false }) => {
   const [content, setContent] = useState(name);
   return isBlack ? (
     <div
