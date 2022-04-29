@@ -2,7 +2,7 @@ import React from "react";
 import CategoryBlock from "./CategoryBlock";
 import NavBar from "./NavBar";
 
-const Category = () => {
+const Category = ({ setGenre }) => {
   return (
     <div className="flex justify-around">
       <div className="flex">
@@ -28,6 +28,7 @@ const Category = () => {
               },
             ]}
             isBlack={false}
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["HISTORY"]}
@@ -47,6 +48,7 @@ const Category = () => {
               },
             ]}
             isBlack
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["BOOKS"]}
@@ -66,6 +68,7 @@ const Category = () => {
               },
             ]}
             isBlack={false}
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["LIFE"]}
@@ -85,6 +88,7 @@ const Category = () => {
               },
             ]}
             isBlack
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["LOVE"]}
@@ -104,6 +108,7 @@ const Category = () => {
               },
             ]}
             isBlack={false}
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["POP CULTURE"]}
@@ -123,6 +128,7 @@ const Category = () => {
               },
             ]}
             isBlack
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["DEATH"]}
@@ -142,6 +148,7 @@ const Category = () => {
               },
             ]}
             isBlack={false}
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["FUN STUFF"]}
@@ -161,6 +168,7 @@ const Category = () => {
               },
             ]}
             isBlack
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["MOVIES"]}
@@ -180,6 +188,7 @@ const Category = () => {
               },
             ]}
             isBlack={false}
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["ANIMALS"]}
@@ -199,6 +208,7 @@ const Category = () => {
               },
             ]}
             isBlack
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["SCIENCE"]}
@@ -218,6 +228,7 @@ const Category = () => {
               },
             ]}
             isBlack={false}
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["GAMES"]}
@@ -237,6 +248,7 @@ const Category = () => {
               },
             ]}
             isBlack
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["TV"]}
@@ -256,6 +268,7 @@ const Category = () => {
               },
             ]}
             isBlack={false}
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["POLITICS"]}
@@ -275,6 +288,7 @@ const Category = () => {
               },
             ]}
             isBlack
+            setGenre={setGenre}
           />
           <CategoryBlock
             name={["FAMILY"]}
@@ -294,6 +308,7 @@ const Category = () => {
               },
             ]}
             isBlack={false}
+            setGenre={setGenre}
           />
         </ul>
       </div>

@@ -31,7 +31,7 @@ const NavBar = () => {
         {links.map((link, index) => (
           <li
             key={index}
-            className="text-[1.25vh] border-20 py-9 px-4 hover:font-bold hover:text-redquote border-t-redquote border-t-2 text-justify [writing-mode:vertical-rl] [text-orientation:upright]"
+            className="text-[1.15vh] border-20 py-8 px-4 hover:font-bold hover:text-redquote border-t-redquote border-t-2 text-justify [writing-mode:vertical-rl] [text-orientation:upright]"
           >
             <Link to={link.path}>{link.name}</Link>
           </li>

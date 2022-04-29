@@ -3,8 +3,10 @@ import NavBar from "./NavBar";
 import WhiteButton from "./WhiteButton";
 import RedButton from "./RedButton";
 import QuoteHome from "./QuoteHome";
+import QuoteEditor from "./QuoteEditor";
+import { Link } from "react-router-dom";
 
-const QuoteMe = () => {
+const QuoteMe = ({ quote, onClick, genre }) => {
   return (
     <div>
       <div>
@@ -16,7 +18,7 @@ const QuoteMe = () => {
         </div>
         <div className="flex w-full ml-56">
           <div className="flex flex-row justify-between w-1/5 p-2 mb-3 bg-slate-200">
-            <div>Category : ALL</div>
+            <div>Category : {genre}</div>
             <button type="button">X</button>
           </div>
         </div>
@@ -29,7 +31,12 @@ const QuoteMe = () => {
               />
             </div>
             <div className="flex items-center">
-              <QuoteHome textSize="text-[1.7vw]" />
+              <QuoteHome
+                padding="pb-[10vh]"
+                height="h-[15vh]"
+                textSize="text-[1.7vw]"
+                quote={quote}
+              />
             </div>
             <div className="flex items-end w-40">
               <img
@@ -52,10 +59,12 @@ const QuoteMe = () => {
             <WhiteButton text="RANDOM" />
           </div>
           <div>
-            <WhiteButton text="NEW QUOTE" />
+            <WhiteButton text="NEW QUOTE" onClick={() => onClick()} />
           </div>
           <div>
-            <WhiteButton text="NEW CATEGORY" />
+            <Link to="/category">
+              <WhiteButton text="NEW CATEGORY" />
+            </Link>
           </div>
         </div>
         <div className="flex flex-col">
@@ -64,6 +73,9 @@ const QuoteMe = () => {
         <button type="button" className="flex flex-col mt-5">
           <img src="/static/img/arrow.png" alt="arrow" />
         </button>
+        <div className="m-16">
+          <QuoteEditor quote={quote} />
+        </div>
       </div>
     </div>
   );
