@@ -1,16 +1,16 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: ["./src/**/*.{html,jsx}"],
   // ...
   theme: {
     screens: {
-      'xs': '280px',
+      xs: "280px",
       ...defaultTheme.screens,
     },
     extend: {
       screens: {
-        'tallxs': { 'raw': '(max-height: 800px)' },
+        tallxs: { raw: "(max-height: 800px)" },
       },
       fontSize: {
         nav: "1.25vh",
