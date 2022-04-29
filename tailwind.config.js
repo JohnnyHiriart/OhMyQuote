@@ -1,8 +1,17 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./src/**/*.{html,jsx}"],
   // ...
   theme: {
+    screens: {
+      xs: "280px",
+      ...defaultTheme.screens,
+    },
     extend: {
+      screens: {
+        tallxs: { raw: "(max-height: 800px)" },
+      },
       fontSize: {
         nav: "1.25vh",
         xs: ".75rem",
@@ -20,6 +29,10 @@ module.exports = {
       },
       colors: {
         redquote: "#FF1616",
+      },
+      backgroundImage: {
+        redfeedback:
+          "linear-gradient(0deg, rgba(255, 22, 22, 0.05), rgba(255, 22, 22, 0.05)), #FFFFFF",
       },
       fontFamily: {
         sans: ["Jost", "sans-serif"],

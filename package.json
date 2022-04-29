@@ -10,6 +10,7 @@
     "fix": "prettier --write . && eslint --fix --ext .jsx ."
   },
   "dependencies": {
+    "@tinymce/tinymce-react": "^4.0.0",
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "prop-types": "^15.8.1",

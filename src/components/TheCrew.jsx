@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 import NavBar from "./NavBar";
 import WhiteButton from "./WhiteButton";
-import RedButton from "./RedButton";
+import RedButtonModal from "./RedButtonModal";
 
 const crewItems = [
   {
@@ -50,10 +50,16 @@ const TheCrew = () => {
         </div>
         <div className="flex flex-col items-center mt-5">
           <div>
-            <WhiteButton text="CONTACT US" />
+            <a
+              className="footer__mailing"
+              href="mailto:ohmyquote@gmail.com"
+              title="Click pour nous joindre"
+            >
+              <WhiteButton text="CONTACT US" />
+            </a>
           </div>
           <div>
-            <RedButton text="FEEDBACK" />
+            <RedButtonModal text="FEEDBACK" />
           </div>
         </div>
       </div>

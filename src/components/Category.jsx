@@ -2,10 +2,10 @@ import React from "react";
 import CategoryBlock from "./CategoryBlock";
 import NavBar from "./NavBar";
 
-const Category = () => {
+const Category = ({}) => {
   return (
-    <div className="flex justify-around">
-      <div className="flex">
+    <div className="flex justify-around w-screen">
+      <div className="">
         <NavBar />
       </div>
       <div className="fixed flex content-center justify-center w-screen h-screen p-10 left-16">
