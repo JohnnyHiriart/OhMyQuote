@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Carousel = () => {
@@ -63,45 +63,57 @@ const Carousel = () => {
     setIsActiveSlide3(false);
   }
 
+  const [pageWidth, setPageWidth]  = useState(window.innerWidth);
+
+
+    useEffect(() => {
+      function handleResize() {
+        setPageWidth(window.innerWidth);
+  }
+  
+      window.addEventListener('resize', handleResize)
+    },)
+    console.log(pageWidth);
+  
   return (
-    <div className="flex flex-col w-full justify-center h-[50vh] items-center text-[#dbe4ee]">
-      <div className="flex">
-        <Link to={isActiveSlide1 && "/category"}>
+    <div className="flex flex-col justify-center h-[50vh] items-center text-[#dbe4ee]" >
+      <div className="flex flex-wrap">
+        <Link to={(isActiveSlide1 || pageWidth < 640) && "/category"}>
           <div
             className={
-              isActiveSlide1
-                ? "shadow-shadowcarousel1 cursor-pointer h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden w-[35rem] transition-[width] duration-200 ease-linear"
-                : "shadow-shadowcarousel1 cursor-pointer h-96 w-20 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
+              (isActiveSlide1 && pageWidth > 639)
+                ? "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] transition-[width] duration-200 ease-linear"
+                : "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 w-[3.5rem] rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
             }
-            onClick={!isActiveSlide1 && handleClickActiveSlide1}
-            onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide1}
+            onClick={!isActiveSlide1 ? handleClickActiveSlide1 : undefined}
+            onKeyDown={!isActiveSlide1 ? handleKeyDownActiveSlide1 : undefined}
             role="button"
             tabIndex={0}
           >
             <div
               className={
-                isActiveSlide1
-                  ? "bg-[url('/static/img/categories1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel2 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('/static/img/categories3.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                (isActiveSlide1 && pageWidth > 639)
+                  ? "bg-[url('/static/img/categories1.jpg')] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('/static/img/categories3.jpg')] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
-              onClick={!isActiveSlide1 && handleClickActiveSlide1}
-              onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide1}
+              onClick={!isActiveSlide1 ? handleClickActiveSlide1 : undefined}
+              onKeyDown={!isActiveSlide1 ? handleKeyDownActiveSlide1 : undefined}
               role="button"
               tabIndex={0}
             >
               <div
                 className={
-                  isActiveSlide1
+                  (isActiveSlide1 && pageWidth > 639)
                     ? "flex scale-1 flex-col justify-end h-full transition-[all] duration-200 ease-linear"
                     : "flex flex-col justify-end h-full scale-[0.6666666666666] transition-[all] duration-200 ease-linear"
                 }
-                onClick={!isActiveSlide1 && handleClickActiveSlide1}
-                onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide1}
+                onClick={!isActiveSlide1 ? handleClickActiveSlide1 : undefined}
+                onKeyDown={!isActiveSlide1 ? handleKeyDownActiveSlide1 : undefined}
                 role="button"
                 tabIndex={0}
               >
-                <div className="flex ml-[0.5rem] w-[1000rem]">
-                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.7rem] rounded-full flex justify-center items-center">
+                <div className="flex items-end w-80">
+                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.5rem] rounded-full flex justify-center items-center">
                     <img
                       className="w-1/2"
                       src="/static/img/smal-logo-oh-my-quote.png"
@@ -110,20 +122,20 @@ const Carousel = () => {
                   </div>
                   <div
                     className={
-                      isActiveSlide1
+                      (isActiveSlide1 && pageWidth > 639)
                         ? "opacity-100 ml-0 mt-3 transition-[all] duration-200 ease-linear text-white"
                         : "mt-3 ml-4 transition-[all] duration-200 ease-linear text-white opacity-0"
                     }
-                    onClick={!isActiveSlide1 && handleClickActiveSlide1}
-                    onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide1}
+                    onClick={!isActiveSlide1 ? handleClickActiveSlide1 : undefined}
+                    onKeyDown={!isActiveSlide1 ? handleKeyDownActiveSlide1 : undefined}
                     role="button"
                     tabIndex={0}
                   >
-                    <h4 className="text-[1.5rem] drop-shadow-[0_1px_1px_black] [line-height:0.9rem]">
+                    <h4 className="text-[1.6rem] drop-shadow-[0_2px_2px_black] font-bold [line-height:1.1rem]">
                       Categories
                     </h4>
-                    <p className="text-[1.1rem] drop-shadow-[0_1px_1px_black] [line-height:2.5rem]">
-                      Choose the theme of your quote
+                    <p className="text-[1.2rem] drop-shadow-[0_2px_2px_black] w-full font-bold [line-height:2rem]">
+                      Pick your theme
                     </p>
                   </div>
                 </div>
@@ -131,42 +143,42 @@ const Carousel = () => {
             </div>
           </div>
         </Link>
-        <Link to={isActiveSlide2 && "/quote-me"}>
+        <Link to={(isActiveSlide2 || pageWidth < 640) && "/quote-me"}>
           <div
             className={
-              isActiveSlide2
-                ? "shadow-shadowcarousel1 cursor-pointer h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden w-[35rem] transition-[width] duration-200 ease-linear"
-                : "shadow-shadowcarousel1 cursor-pointer h-96 w-20 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
+              (isActiveSlide2 && pageWidth > 639)
+                ? "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] transition-[width] duration-200 ease-linear"
+                : "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 w-[3.5rem] rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
             }
-            onClick={!isActiveSlide2 && handleClickActiveSlide2}
-            onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide2}
+            onClick={!isActiveSlide2 ? handleClickActiveSlide2 : undefined}
+            onKeyDown={!isActiveSlide2 ? handleKeyDownActiveSlide2 : undefined}
             role="button"
             tabIndex={0}
           >
             <div
               className={
-                isActiveSlide2
-                  ? "bg-[url('/static/img/quoteme1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('/static/img/quoteme2.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                (isActiveSlide2 && pageWidth > 639)
+                  ? "bg-[url('/static/img/quoteme1.jpg')] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('/static/img/quoteme2.jpg')] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
-              onClick={!isActiveSlide2 && handleClickActiveSlide2}
-              onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide2}
+              onClick={!isActiveSlide2 ? handleClickActiveSlide2 : undefined}
+              onKeyDown={!isActiveSlide2 ? handleKeyDownActiveSlide2 : undefined}
               role="button"
               tabIndex={0}
             >
               <div
                 className={
-                  isActiveSlide2
+                  (isActiveSlide2 && pageWidth > 639)
                     ? "flex scale-1 flex-col justify-end h-full transition-[all] duration-200 ease-linear"
                     : "flex flex-col justify-end h-full scale-[0.6666666666666] transition-[all] duration-200 ease-linear"
                 }
-                onClick={!isActiveSlide2 && handleClickActiveSlide2}
-                onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide2}
+                onClick={!isActiveSlide2 ? handleClickActiveSlide2 : undefined}
+                onKeyDown={!isActiveSlide2 ? handleKeyDownActiveSlide2 : undefined}
                 role="button"
                 tabIndex={0}
               >
-                <div className="flex ml-[0.5rem] w-[1000rem]">
-                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.7rem] rounded-[50%] flex justify-center items-center">
+                <div className="flex items-end w-80">
+                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.5rem] rounded-[50%] flex justify-center items-center">
                     <svg
                       className="w-1/2 fill-current text-redquote"
                       stroke="currentColor"
@@ -178,19 +190,19 @@ const Carousel = () => {
                   </div>
                   <div
                     className={
-                      isActiveSlide2
+                      (isActiveSlide2 && pageWidth > 639)
                         ? "opacity-100 ml-0 mt-3 transition-[all] duration-200 ease-linear text-white"
                         : "mt-3 ml-4 transition-[all] duration-200 ease-linear text-white opacity-0"
                     }
-                    onClick={!isActiveSlide2 && handleClickActiveSlide2}
-                    onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide2}
+                    onClick={!isActiveSlide2 ? handleClickActiveSlide2 : undefined}
+                    onKeyDown={!isActiveSlide2 ? handleKeyDownActiveSlide2 : undefined}
                     role="button"
                     tabIndex={0}
                   >
-                    <h4 className="text-[1.5rem] drop-shadow-[0_1px_1px_black] [line-height:0.9rem]">
+                    <h4 className="text-[1.6rem] drop-shadow-[0_2px_2px_black] font-bold [line-height:1.1rem]">
                       Quote Me
                     </h4>
-                    <p className="text-[1.1rem] drop-shadow-[0_1px_1px_black] [line-height:2.5rem]">
+                    <p className="text-[1.2rem] drop-shadow-[0_2px_2px_black] font-bold [line-height:2rem]">
                       Edit and share your quote
                     </p>
                   </div>
@@ -199,42 +211,42 @@ const Carousel = () => {
             </div>
           </div>
         </Link>
-        <Link to={isActiveSlide3 && "/top-quotes"}>
+        <Link to={(isActiveSlide3 || pageWidth < 640) && "/top-quotes"}>
           <div
             className={
-              isActiveSlide3
-                ? "shadow-shadowcarousel1 cursor-pointer h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden w-[35rem] transition-[width] duration-200 ease-linear"
-                : "shadow-shadowcarousel1 cursor-pointer h-96 w-20 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
+              (isActiveSlide3 && pageWidth > 639)
+                ? "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] transition-[width] duration-200 ease-linear"
+                : "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 w-[3.5rem] rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
             }
-            onClick={!isActiveSlide3 && handleClickActiveSlide3}
-            onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide3}
+            onClick={!isActiveSlide3 ? handleClickActiveSlide3 : undefined}
+            onKeyDown={!isActiveSlide3 ? handleKeyDownActiveSlide3 : undefined}
             role="button"
             tabIndex={0}
           >
             <div
               className={
-                isActiveSlide3
-                  ? "bg-[url('/static/img/top1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('/static/img/top2.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                (isActiveSlide3 && pageWidth > 639)
+                  ? "bg-[url('/static/img/top1.jpg')] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('/static/img/top2.jpg')] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
-              onClick={!isActiveSlide3 && handleClickActiveSlide3}
-              onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide3}
+              onClick={!isActiveSlide3 ? handleClickActiveSlide3 : undefined}
+              onKeyDown={!isActiveSlide3 ? handleKeyDownActiveSlide3 : undefined}
               role="button"
               tabIndex={0}
             >
               <div
                 className={
-                  isActiveSlide3
+                  (isActiveSlide3 && pageWidth > 639)
                     ? "flex scale-1 flex-col justify-end h-full transition-[all] duration-200 ease-linear"
                     : "flex flex-col justify-end h-full scale-[0.6666666666666] transition-[all] duration-200 ease-linear"
                 }
-                onClick={!isActiveSlide3 && handleClickActiveSlide3}
-                onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide3}
+                onClick={!isActiveSlide3 ? handleClickActiveSlide3 : undefined}
+                onKeyDown={!isActiveSlide3 ? handleKeyDownActiveSlide3 : undefined}
                 role="button"
                 tabIndex={0}
               >
-                <div className="flex ml-[0.5rem] w-[1000rem]">
-                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.7rem] rounded-[50%] flex justify-center items-center">
+                <div className="flex items-end w-80">
+                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.5rem] rounded-[50%] flex justify-center items-center">
                     <svg
                       className="w-1/2 fill-current text-redquote"
                       stroke="currentColor"
@@ -246,19 +258,19 @@ const Carousel = () => {
                   </div>
                   <div
                     className={
-                      isActiveSlide3
+                      (isActiveSlide3 && pageWidth > 639)
                         ? "opacity-100 ml-0 mt-3 transition-[all] duration-200 ease-linear text-white"
                         : "mt-3 ml-4 transition-[all] duration-200 ease-linear text-white opacity-0"
                     }
-                    onClick={!isActiveSlide3 && handleClickActiveSlide3}
-                    onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide3}
+                    onClick={!isActiveSlide3 ? handleClickActiveSlide3 : undefined}
+                    onKeyDown={!isActiveSlide3 ? handleKeyDownActiveSlide3 : undefined}
                     role="button"
                     tabIndex={0}
                   >
-                    <h4 className="text-[1.5rem] drop-shadow-[0_1px_1px_black] [line-height:0.9rem]">
+                    <h4 className="text-[1.6rem] drop-shadow-[0_2px_2px_black] font-bold [line-height:1.1rem]">
                       Top Quotes
                     </h4>
-                    <p className="text-[1.1rem] drop-shadow-[0_1px_1px_black] [line-height:2.5rem]">
+                    <p className="text-[1.2rem] drop-shadow-[0_2px_2px_black] w-full font-bold [line-height:2rem]">
                       Your favorite quotes
                     </p>
                   </div>
@@ -267,42 +279,42 @@ const Carousel = () => {
             </div>
           </div>
         </Link>
-        <Link to={isActiveSlide4 && "/the-crew"}>
+        <Link to={(isActiveSlide4 || pageWidth < 640) && "/the-crew"}>
           <div
             className={
-              isActiveSlide4
-                ? "shadow-shadowcarousel1 cursor-pointer h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden w-[35rem] transition-[width] duration-200 ease-linear"
-                : "shadow-shadowcarousel1 cursor-pointer h-96 w-20 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
+              (isActiveSlide4 && pageWidth > 639)
+                ? "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] transition-[width] duration-200 ease-linear"
+                : "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 w-[3.5rem] rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
             }
-            onClick={!isActiveSlide4 && handleClickActiveSlide4}
-            onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide4}
+            onClick={!isActiveSlide4 ? handleClickActiveSlide4 : undefined}
+            onKeyDown={!isActiveSlide4 ? handleKeyDownActiveSlide4 : undefined}
             role="button"
             tabIndex={0}
           >
             <div
               className={
-                isActiveSlide4
-                  ? "bg-[url('/static/img/crew1.jpg')] scale-1 w-[35rem] h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('/static/img/crew2.jpg')] scale-150 w-20 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                (isActiveSlide4 && pageWidth > 639)
+                  ? "bg-[url('/static/img/crew1.jpg')] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('/static/img/crew2.jpg')] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
-              onClick={!isActiveSlide4 && handleClickActiveSlide4}
-              onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide4}
+              onClick={!isActiveSlide4 ? handleClickActiveSlide4 : undefined}
+              onKeyDown={!isActiveSlide4 ? handleKeyDownActiveSlide4 : undefined}
               role="button"
               tabIndex={0}
             >
               <div
                 className={
-                  isActiveSlide4
+                  (isActiveSlide4 && pageWidth > 639)
                     ? "flex scale-1 flex-col justify-end h-full transition-[all] duration-200 ease-linear"
                     : "flex flex-col justify-end h-full scale-[0.6666666666666] transition-[all] duration-200 ease-linear"
                 }
-                onClick={!isActiveSlide4 && handleClickActiveSlide4}
-                onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide4}
+                onClick={!isActiveSlide4 ? handleClickActiveSlide4 : undefined}
+                onKeyDown={!isActiveSlide4 ? handleKeyDownActiveSlide4 : undefined}
                 role="button"
                 tabIndex={0}
               >
-                <div className="flex ml-[0.5rem] w-[1000rem]">
-                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.7rem] rounded-[50%] flex justify-center items-center">
+                <div className="flex items-end w-80">
+                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.5rem] rounded-[50%] flex justify-center items-center">
                     <svg
                       className="w-1/2 fill-current text-redquote"
                       stroke="currentColor"
@@ -314,19 +326,19 @@ const Carousel = () => {
                   </div>
                   <div
                     className={
-                      isActiveSlide4
+                      (isActiveSlide4 && pageWidth > 639)
                         ? "opacity-100 ml-0 mt-3 transition-[all] duration-200 ease-linear text-white"
                         : "mt-3 ml-4 transition-[all] duration-200 ease-linear text-white opacity-0"
                     }
-                    onClick={!isActiveSlide4 && handleClickActiveSlide4}
-                    onKeyDown={!isActiveSlide1 && handleKeyDownActiveSlide4}
+                    onClick={!isActiveSlide4 ? handleClickActiveSlide4 : undefined}
+                    onKeyDown={!isActiveSlide4 ? handleKeyDownActiveSlide4 : undefined}
                     role="button"
                     tabIndex={0}
                   >
-                    <h4 className="text-[1.5rem] drop-shadow-[0_1px_1px_black] [line-height:0.9rem]">
+                    <h4 className="text-[1.6rem] drop-shadow-[0_2px_2px_black] font-bold [line-height:1.1rem]">
                       The Crew
                     </h4>
-                    <p className="text-[1.1rem] drop-shadow-[0_1px_1px_black] [line-height:2.5rem]">
+                    <p className="text-[1.2rem] drop-shadow-[0_2px_2px_black] w-full font-bold [line-height:2rem]">
                       Know us and contact us
                     </p>
                   </div>

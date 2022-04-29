@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 
@@ -27,7 +27,7 @@ const NavBar = () => {
       <Link to="/">
         <Logo />
       </Link>
-      <ul className="flex flex-col items-center justify-around m-2">
+      <ul className="flex-col items-center justify-around m-2 md:flex">
         {links.map((link, index) => (
           <li
             key={index}
