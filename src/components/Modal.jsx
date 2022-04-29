@@ -5,11 +5,11 @@ import WhiteButton from "./WhiteButton";
 
 const Modal = ({ closedModal }) => {
   return (
-    <div className="z-[20] fixed top-[50%] left-[52%] translate-x-[-50%] translate-y-[-50%] w-3/5 h-3/4 p-3 mt-3 border-4 rounded-lg shadow-md border-redquote bg-white">
+    <div className="z-[20] fixed top-[50%] left-[52%] translate-x-[-50%] translate-y-[-50%] w-3/5 h-4/5 p-3 border-4 rounded-lg shadow-md border-redquote bg-white">
       <button type="button" className="close" onClick={closedModal}>
         <span>&times;</span>
       </button>
-      <div className="flex flex-col flex-wrap items-center w-full h-full p-2 m-2">
+      <div className="flex flex-col flex-wrap items-center w-full h-full ">
         <div className="flex flex-row content-center justify-center">
           <h1 className="text-6xl font-bold text-redquote">FEEDBACK</h1>
         </div>
@@ -19,7 +19,7 @@ const Modal = ({ closedModal }) => {
         </p>
         <div className="mt-2">
           <textarea
-            className="p-1 ml-1 min-h-[18rem] min-w-[22rem] mb-2 border-4 border-redquote bg-redquote bg-opacity-5 focus:outline-none"
+            className="p-1 ml-1 min-h-[30vh] min-w-[22rem] mb-2 border-4 border-redquote bg-redquote bg-opacity-5 focus:outline-none"
             placeholder="Your feedback"
           />
         </div>

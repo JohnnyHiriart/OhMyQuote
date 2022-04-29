@@ -1,16 +1,16 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: ["./src/**/*.{html,jsx}"],
   // ...
   theme: {
     screens: {
-      'xs': '280px',
+      xs: "280px",
       ...defaultTheme.screens,
     },
     extend: {
       screens: {
-        'tallxs': { 'raw': '(max-height: 800px)' },
+        tallxs: { raw: "(max-height: 800px)" },
       },
       fontSize: {
         nav: "1.25vh",
@@ -57,24 +57,6 @@ module.exports = {
           "100%": { transform: "translateZ(0) translateY(0)" },
         },
       },
-      screens: {
-        '2xl': {'max': '1535px'},
-      // => @media (max-width: 1535px) { ... }
-
-      'xl': {'max': '1279px'},
-      // => @media (max-width: 1279px) { ... }
-
-      'lg': {'max': '1023px'},
-      // => @media (max-width: 1023px) { ... }
-
-      'md': {'max': '767px'},
-      // => @media (max-width: 767px) { ... }
-
-      'ssm': {'max': '639px'},
-      // => @media (max-width: 639px) { ... }
-      //attention: de basse c'était 'sm' et non 'ssm' { ... }
-      //j'ai test pour éviter comflie de fontSize nommé plus haut { ... }
-      }
     },
   },
 };

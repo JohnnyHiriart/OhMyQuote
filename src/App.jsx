@@ -31,7 +31,7 @@ function App() {
       url: `https://quote-garden.herokuapp.com/api/v3/quotes${
         "?genre=" + genre
       }`,
-      params: { page: getRandomInt(10) },
+      params: { page: getRandomInt(5) },
     })
       .then((res) => res.data.data)
       .then((data) => setQuote(data[getRandomInt(data.length)]))
@@ -44,7 +44,7 @@ function App() {
       url: `https://quote-garden.herokuapp.com/api/v3/quotes${
         "?genre=" + genre
       }`,
-      params: { page: getRandomInt(10) },
+      params: { page: getRandomInt(5) },
     })
       .then((res) => res.data.data)
       .then((data) => setTopQuote(data))
