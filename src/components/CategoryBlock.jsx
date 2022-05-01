@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import Category from "./Category";
 
 const CategoryBlock = ({ name, subCategories, isBlack = false, setGenre }) => {
   const [content, setContent] = useState(name);
