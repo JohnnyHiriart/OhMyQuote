@@ -40,7 +40,7 @@ const TheCrew = () => {
         <NavBar />
       </div>
       <div className="fixed flex flex-col content-center justify-center p-5 left-28">
-        <div className="flex justify-center font-bold text-redquote text-7xl">
+        <div className="flex justify-center font-bold text-redquote text-[6vw]">
           <h1>THE CREW</h1>
         </div>
         <div className="flex gap-8">

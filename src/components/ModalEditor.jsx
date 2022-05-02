@@ -5,7 +5,7 @@ import QuoteEditor from "./QuoteEditor";
 
 const ModalEditor = ({ closedModal, quote }) => {
   return (
-    <div className="flex z-[20] fixed top-[50%] left-[52%] translate-x-[-50%] translate-y-[-50%] w-[40vw] h-[80vh] p-3 border-4 rounded-lg shadow-md border-redquote bg-white">
+    <div className="flex z-[20] fixed top-[50%] left-[52%] translate-x-[-50%] translate-y-[-50%] w-[60vw] h-[80vh] p-3 border-4 rounded-lg shadow-md border-redquote bg-white">
       <div
         className="flex content-end justify-end hover:cursor-pointer"
         onClick={closedModal}

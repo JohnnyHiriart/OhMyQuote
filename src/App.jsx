@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
@@ -9,6 +8,7 @@ import TheCrew from "./components/TheCrew";
 import Home from "./components/Home";
 
 import "./App.css";
+import RbThumbs from "./components/RbThumbs";
 
 function App() {
   function getRandomInt(max) {
@@ -123,13 +123,17 @@ function App() {
     "wedding",
   ];
 
-  // variable qui contient toutes les quotes
+  const [dark, setDark] = useState(false);
   const [quote, setQuote] = useState([]);
   const [onClick, setOnClick] = useState(false);
   const [genre, setGenre] = useState("");
   const [genreRandom, setGenreRandom] = useState(
     randomCategories[getRandomInt(randomCategories.length)]
   );
+  // const [selectedQuote, setSelectedQuote] = useState([]);
+
+  console.log(quote);
+
   const [topQuote, setTopQuote] = useState([]);
 
   const handleOnClick = () => {
