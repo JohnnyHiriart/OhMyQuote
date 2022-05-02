@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import Category from "./components/Category";
@@ -28,9 +27,7 @@ function App() {
   useEffect(() => {
     axios({
       method: "get",
-      url: `https://quote-garden.herokuapp.com/api/v3/quotes${
-        "?genre=" + genre
-      }`,
+      url: `https://quote-garden.herokuapp.com/api/v3/quotes${`?genre=${genre}`}`,
       params: { page: getRandomInt(10) },
     })
       .then((res) => res.data.data)
@@ -41,9 +38,7 @@ function App() {
   useEffect(() => {
     axios({
       method: "get",
-      url: `https://quote-garden.herokuapp.com/api/v3/quotes${
-        "?genre=" + genre
-      }`,
+      url: `https://quote-garden.herokuapp.com/api/v3/quotes${`?genre=${genre}`}`,
       params: { page: getRandomInt(10) },
     })
       .then((res) => res.data.data)
