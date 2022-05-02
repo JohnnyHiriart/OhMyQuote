@@ -6,7 +6,7 @@ const WhiteButton = ({ text, onClick }) => {
     <button
       type="button"
       onClick={() => onClick()}
-      className="px-4 py-4 mt-2 font-bold text-center bg-white border-4 rounded-lg shadow-md w-60 border-redquote hover:border-white text-redquote hover:text-white hover:bg-redquote"
+      className="p-[1vw] mt-[0.5vw] text-[1vw] font-bold text-center bg-white border-4 rounded-lg shadow-md w-[15vw] border-redquote hover:border-white text-redquote hover:text-white hover:bg-redquote"
     >
       {text}
     </button>

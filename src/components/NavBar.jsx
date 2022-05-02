@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
 
@@ -29,12 +29,14 @@ const NavBar = () => {
       </Link>
       <ul className="flex-col items-center justify-around m-2 md:flex">
         {links.map((link, index) => (
-          <li
-            key={index}
-            className="text-[1.15vh] border-20 py-8 px-4 hover:font-bold hover:text-redquote border-t-redquote border-t-2 text-justify [writing-mode:vertical-rl] [text-orientation:upright]"
-          >
-            <Link to={link.path}>{link.name}</Link>
-          </li>
+          <Link to={link.path}>
+            <li
+              key={index}
+              className="text-[1.15vh] py-[4vh] px-[2.5vh] hover:cursor-pointer hover:font-bold hover:text-redquote border-t-redquote border-t-2 text-justify [writing-mode:vertical-rl] [text-orientation:upright]"
+            >
+              {link.name}
+            </li>
+          </Link>
         ))}
       </ul>
     </nav>

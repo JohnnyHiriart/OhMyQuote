@@ -16,7 +16,7 @@ const RedButtonModal = ({ text }) => {
     <div>
       <button
         type="button"
-        className="px-4 py-4 mt-2 mb-4 font-bold text-center text-white border-4 border-white rounded-lg shadow-md w-60 bg-redquote hover:text-redquote hover:border-redquote hover:bg-white"
+        className="p-[1vw] m-[0.5vw] text-[1vw] font-bold text-center text-white border-4 border-white rounded-lg shadow-md w-[15vw] bg-redquote hover:text-redquote hover:border-redquote hover:bg-white"
         onClick={openModal}
       >
         {text}
