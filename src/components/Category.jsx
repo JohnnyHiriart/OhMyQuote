@@ -18,11 +18,11 @@ const Category = ({ setGenre }) => {
                 linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
               },
               {
-                nameSubCat: "Art ",
+                nameSubCat: "Music",
                 linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
               },
               {
-                nameSubCat: "Music",
+                nameSubCat: "Art",
                 linkSubCat:
                   "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
               },
