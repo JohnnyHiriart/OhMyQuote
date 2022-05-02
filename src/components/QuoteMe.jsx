@@ -1,39 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "./NavBar";
 import WhiteButton from "./WhiteButton";
-import RedButton from "./RedButton";
 import QuoteHome from "./QuoteHome";
-import QuoteEditor from "./QuoteEditor";
+import RatingModal from "./RatingModal";
 import { Link } from "react-router-dom";
+import EditorModal from "./EditorModal";
 
-const QuoteMe = ({ quote, onClick, genre }) => {
+const QuoteMe = ({ quote, onClick, genre, setGenre }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <div>
+    <div className="flex justify-between">
       <div>
         <NavBar />
       </div>
-      <div className="flex flex-col items-center w-5/6 p-5 ml-28">
-        <div className="flex font-bold text-redquote text-7xl">
+      <div className="flex flex-col items-center w-5/6 h-screen p-4 ml-[12vw]">
+        <div className="flex font-bold text-redquote text-[6vw]">
           <h1>QUOTE ME</h1>
         </div>
-        <div className="flex w-full ml-56">
-          <div className="flex flex-row justify-between w-1/5 p-2 mb-3 bg-slate-200">
-            <div>Category : {genre}</div>
-            <button type="button">X</button>
+        <div className="flex w-full">
+          <div className="flex flex-row text-[1vw] justify-between w-1/5 p-2 mb-3 bg-slate-200">
+            <div>Category : {genre === "" ? "ALL" : genre}</div>
+            <button type="button" onClick={() => setGenre("")}>
+              X
+            </button>
           </div>
         </div>
         <div className="flex w-full">
-          <div className="flex flex-row justify-between w-full border-4 rounded-lg ml-28 h-96 bg-redquote bg-opacity-5 border-redquote">
+          <div className="flex justify-between w-full border-4 rounded-lg h-[50vh] bg-redquote bg-opacity-5 border-redquote">
             <div className="w-40">
               <img
                 src="/static/img/smal-logo-oh-my-quote2.png"
                 alt="opening_quote"
               />
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center text-center">
               <QuoteHome
                 padding="pb-[10vh]"
-                height="h-[15vh]"
+                height="h-[25vh]"
                 textSize="text-[1.7vw]"
                 quote={quote}
               />
@@ -45,21 +57,18 @@ const QuoteMe = ({ quote, onClick, genre }) => {
               />
             </div>
           </div>
-          <div className="flex flex-col ml-5 space-y-28">
-            <button type="button">
-              <img src="/static/img/thumbs-up_1f44d.png" alt="thumb_up" />
-            </button>
-            <button type="button">
-              <img src="/static/img/thumbs-down_1f44e.png" alt="thumb_down" />
-            </button>
-          </div>
         </div>
         <div className="flex flex-row mt-5 space-x-16">
           <div>
-            <WhiteButton text="RANDOM" />
+            <WhiteButton text="NEW QUOTE" onClick={() => onClick()} />
           </div>
           <div>
-            <WhiteButton text="NEW QUOTE" onClick={() => onClick()} />
+            <EditorModal
+              quote={quote}
+              isOpen={isOpen}
+              openModal={openModal}
+              closeModal={closeModal}
+            />
           </div>
           <div>
             <Link to="/category">
@@ -67,15 +76,10 @@ const QuoteMe = ({ quote, onClick, genre }) => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col">
-          <RedButton text="CUSTOMIZE" />
-        </div>
-        <button type="button" className="flex flex-col mt-5">
-          <img src="/static/img/arrow.png" alt="arrow" />
-        </button>
-        <div className="m-16">
-          <QuoteEditor quote={quote} />
-        </div>
+      </div>
+      <div className="flex flex-col items-center justify-center m-[2vw] space-y-28">
+        <RatingModal imgUrl="/static/img/thumbs-up_1f44d.png" />
+        <RatingModal imgUrl="/static/img/thumbs-down_1f44e.png" />
       </div>
     </div>
   );

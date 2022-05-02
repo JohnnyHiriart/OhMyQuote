@@ -4,11 +4,11 @@ import NavBar from "./NavBar";
 
 const Category = ({ setGenre }) => {
   return (
-    <div className="flex justify-around">
-      <div className="flex">
+    <div className="flex justify-around w-screen h-screen">
+      <div className="">
         <NavBar />
       </div>
-      <div className="fixed flex content-center justify-center w-screen h-screen p-10 left-16">
+      <div className="flex items-center justify-center w-screen h-screen left-16">
         <ul className="grid justify-center gap-2 font-bold lg:grid-cols-5 lg:grid-rows-3 align-center sm:grid-cols-3 sm:grid-rows-5">
           <CategoryBlock
             name={["ART"]}
@@ -27,8 +27,8 @@ const Category = ({ setGenre }) => {
                   "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
               },
             ]}
-            isBlack={false}
             setGenre={setGenre}
+            isBlack={false}
           />
           <CategoryBlock
             name={["FEELING"]}
@@ -47,8 +47,8 @@ const Category = ({ setGenre }) => {
                   "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
               },
             ]}
-            isBlack
             setGenre={setGenre}
+            isBlack
           />
           <CategoryBlock
             name={["LOVE"]}
@@ -67,8 +67,8 @@ const Category = ({ setGenre }) => {
                   "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
               },
             ]}
-            isBlack={false}
             setGenre={setGenre}
+            isBlack={false}
           />
           <CategoryBlock
             name={["LAW"]}
@@ -87,8 +87,8 @@ const Category = ({ setGenre }) => {
                   "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
               },
             ]}
-            isBlack
             setGenre={setGenre}
+            isBlack
           />
           <CategoryBlock
             name={["LOL"]}
@@ -107,8 +107,8 @@ const Category = ({ setGenre }) => {
                   "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
               },
             ]}
-            isBlack={false}
             setGenre={setGenre}
+            isBlack={false}
           />
           <CategoryBlock
             name={["FAMILY"]}
@@ -307,8 +307,8 @@ const Category = ({ setGenre }) => {
                   "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
               },
             ]}
-            isBlack={false}
             setGenre={setGenre}
+            isBlack={false}
           />
         </ul>
       </div>
