@@ -18,6 +18,7 @@ const QuoteMe = ({ quote, onClick, genre, setGenre }) => {
   };
 
   return (
+    <div>
     <div className="flex justify-between">
       <div>
         <NavBar />
@@ -80,6 +81,36 @@ const QuoteMe = ({ quote, onClick, genre, setGenre }) => {
       <div className="flex flex-col items-center justify-center m-[2vw] space-y-28">
         <RatingModal imgUrl="/static/img/thumbs-up_1f44d.png" />
         <RatingModal imgUrl="/static/img/thumbs-down_1f44e.png" />
+      </div>
+    </div>
+    <div className="flex justify-center mt-2 space-x-32">
+      
+      <button className="">
+      <img
+          src="/static/logo/317727_square_social media_facebook_social.svg"
+          alt=""
+          onClick={() => onClick()}/>
+          </button>
+          
+          <button className="">
+       <img
+          src="\static\logo\317738_instagram_photography_photos.svg"
+          alt=""
+          onClick={() => onClick()}/>
+          </button>
+          
+          <button className="">
+       <img
+          src="/static/logo/317731_pinterest_social media_social.svg"
+          alt=""
+          onClick={() => onClick()}/>
+          </button>
+          <button className="">
+       <img
+          src="/static/logo/317723_social_square_social media_tweet_twitter.svg"
+          alt=""
+          onClick={() => onClick()}/>
+        </button>
       </div>
     </div>
   );
