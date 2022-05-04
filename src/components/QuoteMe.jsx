@@ -16,7 +16,6 @@ const QuoteMe = ({ quote, onClick, genre, setGenre }) => {
   const closeModal = () => {
     setIsOpen(false);
   };
-
   return (
     <div>
     <div className="flex justify-between">
@@ -86,31 +85,49 @@ const QuoteMe = ({ quote, onClick, genre, setGenre }) => {
     <div className="flex justify-center mt-2 space-x-32">
       
       <button className="">
+        <a
+        target="_blank"
+        href= "http://www.facebook.com/"
+        title="Click pour nous joindre">
       <img
           src="/static/logo/317727_square_social media_facebook_social.svg"
-          alt=""
-          onClick={() => onClick()}/>
+          alt=""/>
+          </a>
           </button>
           
           <button className="">
+          <a
+          target="_blank"
+        href= "http://www.instagram.com/"
+        title="Click pour nous joindre">
        <img
           src="\static\logo\317738_instagram_photography_photos.svg"
           alt=""
-          onClick={() => onClick()}/>
+          /></a>
           </button>
           
           <button className="">
+          <a
+          target="_blank"
+        href= "http://www.pinterest.fr/"
+        title="Click pour nous joindre">
        <img
           src="/static/logo/317731_pinterest_social media_social.svg"
-          alt=""
-          onClick={() => onClick()}/>
+          alt=""/>
+          </a>
           </button>
+          
           <button className="">
+          <a
+          target="_blank"
+        href= "http://www.twitter.com/"
+        title="Click pour nous joindre">
        <img
           src="/static/logo/317723_social_square_social media_tweet_twitter.svg"
-          alt=""
-          onClick={() => onClick()}/>
+          alt=""/>
+          </a>
         </button>
+        
       </div>
     </div>
   );
