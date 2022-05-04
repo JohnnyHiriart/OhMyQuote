@@ -27,8 +27,8 @@ const QuoteMe = ({
   const closeModal = () => {
     setIsOpen(false);
   };
-
   return (
+    <div>
     <div className="flex justify-between">
       <div>
         <NavBar />
@@ -104,6 +104,54 @@ const QuoteMe = ({
           refreshQuotesDown={() => refreshQuotesDown(topQuotes, actualQuote)}
           isDown={true}
         />
+      </div>
+    </div>
+    <div className="flex justify-center mt-2 space-x-32">
+      
+      <button className="">
+        <a
+        target="_blank"
+        href= "http://www.facebook.com/"
+        title="Click pour nous joindre">
+      <img
+          src="/static/logo/317727_square_social media_facebook_social.svg"
+          alt=""/>
+          </a>
+          </button>
+          
+          <button className="">
+          <a
+          target="_blank"
+        href= "http://www.instagram.com/"
+        title="Click pour nous joindre">
+       <img
+          src="\static\logo\317738_instagram_photography_photos.svg"
+          alt=""
+          /></a>
+          </button>
+          
+          <button className="">
+          <a
+          target="_blank"
+        href= "http://www.pinterest.fr/"
+        title="Click pour nous joindre">
+       <img
+          src="/static/logo/317731_pinterest_social media_social.svg"
+          alt=""/>
+          </a>
+          </button>
+          
+          <button className="">
+          <a
+          target="_blank"
+        href= "http://www.twitter.com/"
+        title="Click pour nous joindre">
+       <img
+          src="/static/logo/317723_social_square_social media_tweet_twitter.svg"
+          alt=""/>
+          </a>
+        </button>
+        
       </div>
     </div>
   );
