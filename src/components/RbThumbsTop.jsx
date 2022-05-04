@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import QuoteHome from "./QuoteHome";
+import QuoteTop from "./QuoteTop";
 
-const RbThumbs = ({ nbr, quote }) => {
+const RbThumbsTop = ({ nbr, quoteText, quoteAuthor }) => {
   return (
     <div className="flex items-center content-center justify-center m-10">
       <div className="flex mr-[5vw] justify-center text-4xl font-bold text-white rounded-full h-14 bg-redquote w-14">
@@ -17,9 +17,10 @@ const RbThumbs = ({ nbr, quote }) => {
           />
         </div>
         <div className="h-[10vw] flex items-center">
-          <QuoteHome
+          <QuoteTop
             textSize="text-[1.2vw]"
-            quote={quote}
+            quoteText={quoteText}
+            quoteAuthor={quoteAuthor}
             padding="p-10"
             height=""
           />
@@ -35,9 +36,10 @@ const RbThumbs = ({ nbr, quote }) => {
   );
 };
 
-RbThumbs.propTypes = {
+RbThumbsTop.propTypes = {
   nbr: PropTypes.string.isRequired,
-  quote: PropTypes.string.isRequired,
+  quoteText: PropTypes.string.isRequired,
+  quoteAuthor: PropTypes.string.isRequired,
 };
 
-export default RbThumbs;
+export default RbThumbsTop;

@@ -1,8 +1,63 @@
 import React from "react";
 import CategoryBlock from "./CategoryBlock";
 import NavBar from "./NavBar";
+import PropTypes from "prop-types";
 
 const Category = ({ setGenre }) => {
+  const Categories = [
+    { name: ["ART"], subCat: ["Poetry", "Music", "Art"], isBlack: false },
+    { name: ["FEELING"], subCat: ["Sad", "Anger", "Jealousy"], isBlack: true },
+    {
+      name: ["LOVE"],
+      subCat: ["Wedding", "Romantic", "Relationship"],
+      isBlack: false,
+    },
+    { name: ["LAW"], subCat: ["Equality", "Freedom", "Legal"], isBlack: true },
+    { name: ["LOL"], subCat: ["Funny", "Humor", "Smile"], isBlack: false },
+    {
+      name: ["FAMILY"],
+      subCat: ["Parenthood", "Adolescent", "Family"],
+      isBlack: true,
+    },
+    {
+      name: ["TECHNOLOGY"],
+      subCat: ["Mobile", "Communication", "Computer"],
+      isBlack: false,
+    },
+    { name: ["CARE"], subCat: ["Health", "Medical", "Science"], isBlack: true },
+    {
+      name: ["IMAGINARY"],
+      subCat: ["Imagination", "Dream", "Hope"],
+      isBlack: false,
+    },
+    {
+      name: ["POLITICS"],
+      subCat: ["Power", "War", "Patriotism"],
+      isBlack: true,
+    },
+    {
+      name: ["RELIGION"],
+      subCat: ["Faith", "Religion", "God"],
+      isBlack: false,
+    },
+    { name: ["FOOD"], subCat: ["Diet", "Food", "Fitness"], isBlack: true },
+    {
+      name: ["SCHOOL"],
+      subCat: ["Teacher", "Learning", "History"],
+      isBlack: false,
+    },
+    {
+      name: ["TRADER"],
+      subCat: ["Finance", "Business", "Money"],
+      isBlack: true,
+    },
+    {
+      name: ["PARTY"],
+      subCat: ["Birthday", "Age", "Friendship"],
+      isBlack: false,
+    },
+  ];
+
   return (
     <div className="flex justify-around w-screen h-screen">
       <div className="">
@@ -10,310 +65,22 @@ const Category = ({ setGenre }) => {
       </div>
       <div className="flex items-center justify-center w-screen h-screen left-16">
         <ul className="grid justify-center gap-2 font-bold lg:grid-cols-5 lg:grid-rows-3 align-center sm:grid-cols-3 sm:grid-rows-5">
-          <CategoryBlock
-            name={["ART"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack={false}
-          />
-          <CategoryBlock
-            name={["HISTORY"]}
-            subCategories={[
-              {
-                nameSubCat: "Love",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "War",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Truth",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack
-          />
-          <CategoryBlock
-            name={["BOOKS"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack={false}
-          />
-          <CategoryBlock
-            name={["LIFE"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack
-          />
-          <CategoryBlock
-            name={["LOVE"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack={false}
-          />
-          <CategoryBlock
-            name={["POP CULTURE"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack
-          />
-          <CategoryBlock
-            name={["DEATH"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack={false}
-          />
-          <CategoryBlock
-            name={["FUN STUFF"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack
-          />
-          <CategoryBlock
-            name={["MOVIES"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack={false}
-          />
-          <CategoryBlock
-            name={["ANIMALS"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack
-          />
-          <CategoryBlock
-            name={["SCIENCE"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack={false}
-          />
-          <CategoryBlock
-            name={["GAMES"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack
-          />
-          <CategoryBlock
-            name={["TV"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack={false}
-          />
-          <CategoryBlock
-            name={["POLITICS"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack
-          />
-          <CategoryBlock
-            name={["FAMILY"]}
-            subCategories={[
-              {
-                nameSubCat: "Giacometti",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Alberto_Giacometti",
-              },
-              {
-                nameSubCat: "Banksy",
-                linkSubCat: "https://fr.wikipedia.org/wiki/Banksy",
-              },
-              {
-                nameSubCat: "Basquiat",
-                linkSubCat:
-                  "https://fr.wikipedia.org/wiki/Jean-Michel_Basquiat",
-              },
-            ]}
-            setGenre={setGenre}
-            isBlack={false}
-          />
+          {Categories.map((category) => (
+            <CategoryBlock
+              name={category.name}
+              subCategories={category.subCat}
+              setGenre={setGenre}
+              isBlack={category.isBlack}
+            />
+          ))}
         </ul>
       </div>
     </div>
   );
+};
+
+Category.propTypes = {
+  setGenre: PropTypes.func.isRequired,
 };
 
 export default Category;

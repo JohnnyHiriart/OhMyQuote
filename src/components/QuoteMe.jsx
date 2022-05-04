@@ -1,12 +1,23 @@
 import React, { useState } from "react";
-import NavBar from "./NavBar";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import WhiteButton from "./WhiteButton";
 import QuoteHome from "./QuoteHome";
 import RatingModal from "./RatingModal";
-import { Link } from "react-router-dom";
+import NavBar from "./NavBar";
 import EditorModal from "./EditorModal";
 
-const QuoteMe = ({ quote, onClick, genre, setGenre }) => {
+const QuoteMe = ({
+  quote,
+  onClick,
+  genre,
+  setGenre,
+  actualQuote,
+  refreshQuotesUp,
+  refreshQuotesDown,
+  image,
+  topQuotes,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -64,6 +75,7 @@ const QuoteMe = ({ quote, onClick, genre, setGenre }) => {
           </div>
           <div>
             <EditorModal
+              image={image}
               quote={quote}
               isOpen={isOpen}
               openModal={openModal}
@@ -78,11 +90,43 @@ const QuoteMe = ({ quote, onClick, genre, setGenre }) => {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center m-[2vw] space-y-28">
-        <RatingModal imgUrl="/static/img/thumbs-up_1f44d.png" />
-        <RatingModal imgUrl="/static/img/thumbs-down_1f44e.png" />
+        <RatingModal
+          imgUrl="/static/img/thumbs-up_1f44d.png"
+          actualQuote={actualQuote}
+          topQuotes={topQuotes}
+          refreshQuotesUp={() => refreshQuotesUp(topQuotes, actualQuote)}
+          isDown={false}
+        />
+        <RatingModal
+          imgUrl="/static/img/thumbs-down_1f44e.png"
+          actualQuote={actualQuote}
+          topQuotes={topQuotes}
+          refreshQuotesDown={() => refreshQuotesDown(topQuotes, actualQuote)}
+          isDown={true}
+        />
       </div>
     </div>
   );
+};
+
+QuoteMe.propTypes = {
+  quote: PropTypes.shape({
+    quoteText: PropTypes.string,
+    quoteAuthor: PropTypes.string,
+  }).isRequired,
+  image: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  genre: PropTypes.string.isRequired,
+  setGenre: PropTypes.func.isRequired,
+  actualQuote: PropTypes.string.isRequired,
+  refreshQuotesUp: PropTypes.func.isRequired,
+  refreshQuotesDown: PropTypes.func.isRequired,
+  topQuotes: PropTypes.arrayOf(
+    PropTypes.shape({
+      quoteText: PropTypes.string,
+      quoteAuthor: PropTypes.string,
+    })
+  ).isRequired,
 };
 
 export default QuoteMe;

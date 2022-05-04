@@ -11,7 +11,7 @@ const Modal = ({ closedModal }) => {
       </button>
       <div className="flex flex-col flex-wrap items-center w-full h-full ">
         <div className="flex flex-row content-center justify-center">
-          <h1 className="text-6xl font-bold text-redquote">FEEDBACK</h1>
+          <h1 className="text-[4vw] font-bold text-redquote">FEEDBACK</h1>
         </div>
         <p className="p-2 leading-5">
           Sharing is caring! Please let us know <br /> how much you love (or
