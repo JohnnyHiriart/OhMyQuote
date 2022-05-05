@@ -28,9 +28,9 @@ const CustomImageEditor = ({ image }) => {
         initMenu: "",
         uiSize: {
           width: "60vw",
-          height: "60vh",
+          height: "74vh",
         },
-        menuBarPosition: "top",
+        menuBarPosition: "left",
       }}
       cssMaxHeight={900}
       cssMaxWidth={800}
@@ -48,6 +48,10 @@ const theme = {
   "common.bisize.width": "50px",
   "common.bisize.height": "50px",
   "common.background": "white",
+  "menu.iconSize.width": "20px",
+  "menu.iconSize.height": "20px",
+  "submenu.backgroundColor": "transparent",
+  "submenu.partition.color": "#e5e5e5",
 };
 
 export default CustomImageEditor;

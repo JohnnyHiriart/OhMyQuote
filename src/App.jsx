@@ -192,19 +192,19 @@ function App() {
   const [quote, setQuote] = useState({});
   const [onClick, setOnClick] = useState(false);
   const [genre, setGenre] = useState("");
+  const [image, setImage] = useState([]);
   const [genreRandom, setGenreRandom] = useState(
     randomCategories[getRandomInt(randomCategories.length)]
   );
   const [actualQuote, setActualQuote] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleOnClick = () => {
     setOnClick(!onClick);
     setGenreRandom(randomCategories[getRandomInt(randomCategories.length)]);
   };
 
-  const [image, setImage] = useState([]);
-
-  const MY_KEY = "563492ad6f917000010000014f83524bd3fd484793fe9f36a0be2cfe";
+  const MY_KEY = "563492ad6f91700001000001355f7cfa76ac42c98a7bdff9a57a1ee2";
   useEffect(() => {
     axios
       .get(
@@ -217,7 +217,7 @@ function App() {
       .then((res) => res.data)
       .then((data) => setImage(data.photos[getRandomInt(data.photos.length)]))
       .catch((err) => console.log(err));
-  }, [genre, genreRandom]);
+  }, [isOpen]);
 
   useEffect(() => {
     setActualQuote(quote);
@@ -277,6 +277,8 @@ function App() {
               refreshQuotesDown={() =>
                 refreshQuotesDown(topQuotes, actualQuote)
               }
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
             />
           }
         />

@@ -3,6 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import CustomImageEditor from "./CustomImageEditor";
 import WhiteButton from "./WhiteButton";
+import LinkSocial from "./LinkSocial";
 
 const ModalEditor = ({ closedModal, image, quote }) => {
   return (
@@ -24,7 +25,7 @@ const ModalEditor = ({ closedModal, image, quote }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col text-center">
+      <div className="flex flex-col justify-between text-center">
         <WhiteButton
           text="COPY"
           onClick={() => {
@@ -33,7 +34,7 @@ const ModalEditor = ({ closedModal, image, quote }) => {
             );
           }}
         />
-        SHARE:
+        <LinkSocial />
       </div>
     </div>
   );

@@ -20,6 +20,7 @@ EditorModal.propTypes = {
 
   isOpen: PropTypes.bool.isRequired,
   openModal: PropTypes.func.isRequired,
+
   closeModal: PropTypes.func.isRequired,
 };
 
