@@ -1,13 +1,16 @@
+Oh My Quote!
+
 ## Concept
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+Welcome to Oh My Quote!, a gateway to inspirational quotes. Our web app features a wide array of quotes, that you can customize and share on social media.
 
-## Setup & Use
+## Use
+
+Find your perfect quote by choosing a category or by letting our random button decide. You can also take your pick from other users' Top Quotes. Our Quote Me Editor will then allow you to customize it with the style and image of your choice.
 
 ### Project Initialization
 
-- Clone this repo
+- Clone this repository to your desktop
 - Run command `npm install`
 
 ### Available Commands
@@ -16,7 +19,10 @@ It's pre-configured with a set of tools which'll help students produce industry-
 - `lint` : Runs validation tools, and refuses unclean code (will be executed on every _commit_)
 - `fix` : Fixes linter errors (run it if `lint` growls on your code !)
 
-## FAQ
+### Technologies used for development
+
+- React
+- Javascript, Html, Tailwind CSS
 
 ### Tools
 
@@ -24,4 +30,3 @@ It's pre-configured with a set of tools which'll help students produce industry-
 - _Vite_ : Alternative to _Create-React-App_, packaging less tools for a more fluid experience
 - _ESLint_ : "Quality of code" tool, ensures chosen rules will be enforced
 - _Prettier_ : "Quality of code" tool as well, focuses on the styleguide
-- _ Airbnb Standard_ : One of the most known "standards", even though it's not officially linked to ES/JS

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import WhiteButton from "./WhiteButton";
 import QuoteHome from "./QuoteHome";
 import RatingModal from "./RatingModal";
-import { Link } from "react-router-dom";
 import EditorModal from "./EditorModal";
 
 const QuoteMe = ({ quote, onClick, genre, setGenre }) => {

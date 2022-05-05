@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import QuoteHome from "./QuoteHome";
 import { Link } from "react-router-dom";
+import QuoteHome from "./QuoteHome";
 
 const RbThumbs = ({ nbr, quote, setQuote }) => {
   return (
