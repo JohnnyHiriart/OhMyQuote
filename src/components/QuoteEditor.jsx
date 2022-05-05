@@ -18,6 +18,7 @@ const QuoteEditor = ({ quote }) => {
           initialValue={`<p> " ${quote.quoteText} " </p> <p>${quote.quoteAuthor}</p>`}
           init={{
             height: 500,
+            width: 900,
             menubar: false,
             plugins: [
               "advlist autolink lists link image charmap print preview anchor",
@@ -33,7 +34,7 @@ const QuoteEditor = ({ quote }) => {
               "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
           }}
         />
-        <button onClick={log}></button>
+        <button onClick={log} />
       </div>
     </div>
   );

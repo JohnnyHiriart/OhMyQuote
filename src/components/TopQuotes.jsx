@@ -1,8 +1,10 @@
 import React from "react";
-import RbThumbs from "./RbThumbs";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import NavBar from "./NavBar";
+import RbThumbsTop from "./RbThumbsTop";
 
-const TopQuotes = ({ quotes, setQuote }) => {
+const TopQuotes = ({ setQuote, topQuotes }) => {
   return (
     <div classes="flex content-center justify-center">
       <div>
@@ -12,17 +14,31 @@ const TopQuotes = ({ quotes, setQuote }) => {
         <h1 className="">TOP QUOTES</h1>
       </div>
       <div className="flex flex-col w-screen left-16">
-        {quotes.map((quote, index) => (
-          <RbThumbs
-            nbr={`${index + 1}`}
-            quote={quote}
-            setQuote={setQuote}
-            index={index}
-          />
+        {topQuotes.map((quote, index) => (
+          <div onClick={() => setQuote(quote)} key={index}>
+            <Link to="/quote-me">
+              <RbThumbsTop
+                nbr={`${index + 1}`}
+                quoteText={quote.quoteText}
+                quoteAuthor={quote.quoteAuthor}
+                index={index}
+              />
+            </Link>
+          </div>
         ))}
       </div>
     </div>
   );
+};
+
+TopQuotes.propTypes = {
+  topQuotes: PropTypes.arrayOf(
+    PropTypes.shape({
+      quoteText: PropTypes.string,
+      quoteAuthor: PropTypes.string,
+    })
+  ).isRequired,
+  setQuote: PropTypes.func.isRequired,
 };
 
 export default TopQuotes;

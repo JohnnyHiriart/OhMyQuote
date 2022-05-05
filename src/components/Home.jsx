@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import QuoteHome from "./QuoteHome";
 import TitleHome from "./TitleHome";
 import Carousel from "./Carousel";
@@ -15,6 +16,13 @@ const Home = ({ quote }) => {
       />
     </div>
   );
+};
+
+Home.propTypes = {
+  quote: PropTypes.shape({
+    quoteText: PropTypes.string,
+    quoteAuthor: PropTypes.string,
+  }).isRequired,
 };
 
 export default Home;
