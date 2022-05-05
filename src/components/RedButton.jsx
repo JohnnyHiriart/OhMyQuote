@@ -15,6 +15,7 @@ const RedButton = ({ text, onClick }) => {
 
 RedButton.propTypes = {
   text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default RedButton;

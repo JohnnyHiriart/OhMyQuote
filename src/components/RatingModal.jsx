@@ -2,16 +2,26 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ModalRating from "./ModalRating";
 
-const RatingModal = ({ imgUrl }) => {
+const RatingModal = ({
+  imgUrl,
+  refreshQuotesUp,
+  refreshQuotesDown,
+  actualQuote,
+  topQuotes,
+  isDown,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const openModal = () => {
-    setIsOpen(true);
-    setTimeout(() => closedModal(), 5000);
-  };
 
   const closedModal = () => {
     setIsOpen(false);
+  };
+
+  const openModal = () => {
+    isDown
+      ? refreshQuotesDown(topQuotes, actualQuote)
+      : refreshQuotesUp(topQuotes, actualQuote);
+    setIsOpen(true);
+    setTimeout(() => closedModal(), 3000);
   };
 
   return (
@@ -23,7 +33,12 @@ const RatingModal = ({ imgUrl }) => {
 };
 
 RatingModal.propTypes = {
-  text: PropTypes.string.isRequired,
+  imgUrl: PropTypes.string.isRequired,
+  isDown: PropTypes.bool.isRequired,
+  refreshQuotesUp: PropTypes.func.isRequired,
+  refreshQuotesDown: PropTypes.func.isRequired,
+  actualQuote: PropTypes.string.isRequired,
+  topQuotes: PropTypes.string.isRequired,
 };
 
 export default RatingModal;
