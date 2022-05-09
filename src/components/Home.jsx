@@ -5,13 +5,13 @@ import Carousel from "./Carousel";
 
 const Home = ({ quote }) => {
   return (
-    <div className="flex justify-between content-center flex-col w-[100vw] h-[100vh]">
+    <div className="flex content-center flex-col w-[100vw] h-[100vh]">
       <TitleHome />
       <Carousel />
       <QuoteHome
-        padding="pb-[10vh]"
-        height="h-[15vh]"
-        textSize="text-xl"
+        padding="xs:p-[2vh] ms:p-[3vh]"
+        height=""
+        textSize="xs-text-[4vw] ms-text-[3vw]"
         quote={quote}
       />
     </div>

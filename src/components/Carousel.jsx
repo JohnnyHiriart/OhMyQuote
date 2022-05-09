@@ -75,8 +75,8 @@ const Carousel = () => {
   console.log(pageWidth);
 
   return (
-    <div className="flex flex-col justify-center h-[50vh] items-center text-[#dbe4ee]">
-      <div className="flex flex-wrap">
+    <div className="p-[5vw] flex flex-col justify-center h-[50vh] items-center text-[#dbe4ee]">
+      <div className="flex">
         <Link to={(isActiveSlide1 || pageWidth < 640) && "/category"}>
           <div
             className={
@@ -92,8 +92,8 @@ const Carousel = () => {
             <div
               className={
                 isActiveSlide1 && pageWidth > 639
-                  ? "bg-[url('/static/img/categories1.jpg')] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('/static/img/categories3.jpg')] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  ? "bg-[url('/static/img/categories1.jpg')] rounded-[2rem] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('/static/img/categories3.jpg')] rounded-[2rem] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
               onClick={!isActiveSlide1 ? handleClickActiveSlide1 : undefined}
               onKeyDown={
@@ -165,8 +165,8 @@ const Carousel = () => {
             <div
               className={
                 isActiveSlide2 && pageWidth > 639
-                  ? "bg-[url('/static/img/quoteme1.jpg')] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('/static/img/quoteme2.jpg')] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  ? "bg-[url('/static/img/quoteme1.jpg')] rounded-[2rem] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('/static/img/quoteme2.jpg')] rounded-[2rem] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
               onClick={!isActiveSlide2 ? handleClickActiveSlide2 : undefined}
               onKeyDown={
@@ -189,7 +189,7 @@ const Carousel = () => {
                 tabIndex={0}
               >
                 <div className="flex items-end w-80">
-                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.5rem] rounded-[50%] flex justify-center items-center">
+                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.5rem] rounded-full flex justify-center items-center">
                     <svg
                       className="w-1/2 fill-current text-redquote"
                       stroke="currentColor"
@@ -241,8 +241,8 @@ const Carousel = () => {
             <div
               className={
                 isActiveSlide3 && pageWidth > 639
-                  ? "bg-[url('/static/img/top1.jpg')] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('/static/img/top2.jpg')] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  ? "bg-[url('/static/img/top1.jpg')] rounded-[2rem] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('/static/img/top2.jpg')] rounded-[2rem] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
               onClick={!isActiveSlide3 ? handleClickActiveSlide3 : undefined}
               onKeyDown={
@@ -265,7 +265,7 @@ const Carousel = () => {
                 tabIndex={0}
               >
                 <div className="flex items-end w-80">
-                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.5rem] rounded-[50%] flex justify-center items-center">
+                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.5rem] rounded-full flex justify-center items-center">
                     <svg
                       className="w-1/2 fill-current text-redquote"
                       stroke="currentColor"
@@ -317,8 +317,8 @@ const Carousel = () => {
             <div
               className={
                 isActiveSlide4 && pageWidth > 639
-                  ? "bg-[url('/static/img/crew1.jpg')] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
-                  : "bg-[url('/static/img/crew2.jpg')] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  ? "bg-[url('/static/img/crew1.jpg')] rounded-[2rem] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
+                  : "bg-[url('/static/img/crew2.jpg')] rounded-[2rem] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
               onClick={!isActiveSlide4 ? handleClickActiveSlide4 : undefined}
               onKeyDown={
@@ -341,7 +341,7 @@ const Carousel = () => {
                 tabIndex={0}
               >
                 <div className="flex items-end w-80">
-                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.5rem] rounded-[50%] flex justify-center items-center">
+                  <div className="shadow-shadowcarousel1 bg-white w-10 h-10 m-[0.5rem] rounded-full flex justify-center items-center">
                     <svg
                       className="w-1/2 fill-current text-redquote"
                       stroke="currentColor"
