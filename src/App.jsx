@@ -227,9 +227,7 @@ function App() {
     genre !== ""
       ? axios({
           method: "get",
-          url: `https://quote-garden.herokuapp.com/api/v3/quotes${
-            "?genre=" + genre
-          }`,
+          url: `https://quote-garden.herokuapp.com/api/v3/quotes${`?genre=${genre}`}`,
           params: { page: getRandomInt(10) },
         })
           .then((res) => res.data.data)
@@ -237,9 +235,7 @@ function App() {
           .catch((err) => console.log(err))
       : axios({
           method: "get",
-          url: `https://quote-garden.herokuapp.com/api/v3/quotes${
-            "?genre=" + genreRandom
-          }`,
+          url: `https://quote-garden.herokuapp.com/api/v3/quotes${`?genre=${genreRandom}`}`,
           params: { page: getRandomInt(10) },
         })
           .then((res) => res.data.data)

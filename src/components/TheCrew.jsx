@@ -52,7 +52,7 @@ const TheCrew = () => {
           <div>
             <a
               className="footer__mailing"
-              href="mailto:ohmyquote@gmail.com"
+              href="mailto:ooohmyquote@gmail.com"
               title="Click pour nous joindre"
             >
               <WhiteButton text="CONTACT US" />
