@@ -9,7 +9,7 @@ const CategoryBlock = ({ name, subCategories, setGenre, isBlack = false }) => {
       onMouseOver={() => setContent(subCategories)}
       onMouseLeave={() => setContent(name)}
       onFocus={() => setContent(subCategories)}
-      className="flex items-center justify-center rounded-2xl hover:scale-125 hover:border-black hover:border-2 bg-redquote text-black hover:text-white w-[15vw] h-[29vh]"
+      className="flex items-center justify-center rounded-2xl hover:scale-125 hover:border-black hover:border-2 bg-redquote text-black hover:text-white xl:w-[15vw] xl:h-[29vh] sm:w-[25vw] sm:h-[18vh] xs:w-[55vw] xs:h-[20vh]"
     >
       <div>
         {content === name
@@ -33,7 +33,7 @@ const CategoryBlock = ({ name, subCategories, setGenre, isBlack = false }) => {
       onMouseOver={() => setContent(subCategories)}
       onMouseLeave={() => setContent(name)}
       onFocus={() => setContent(subCategories)}
-      className="flex items-center justify-center rounded-2xl hover:scale-125 hover:border-redquote hover:border-2 bg-black text-white hover:text-white w-[15vw] h-[29vh]"
+      className="flex items-center justify-center rounded-2xl hover:scale-125 hover:border-redquote hover:border-2 bg-black text-white hover:text-white xl:w-[15vw] xl:h-[29vh] sm:w-[25vw] sm:h-[18vh] xs:w-[55vw] xs:h-[20vh]"
     >
       <div>
         {content === name

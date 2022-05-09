@@ -5,7 +5,7 @@ const Logo = () => {
     <div className="">
       <img
         src="/static/img/smal-logo-oh-my-quote.png"
-        className="flex w-[5vw] p-[1vh] mb-[1vw]"
+        className="flex w-16 p-[1vh] mb-[1vw]"
         alt="oh-my-quote"
       />
     </div>
