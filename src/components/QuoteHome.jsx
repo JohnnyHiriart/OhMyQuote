@@ -5,7 +5,7 @@ const QuoteHome = ({ padding, height, textSize, quote }) => {
     <div
       className={`flex ${padding} ${textSize} flex-col items-center ${height}`}
     >
-      <p className="max-w-[850px]">{`" ${quote.quoteText} "`}</p>
+      <p className="max-w-[850px] text-center">{`" ${quote.quoteText} "`}</p>
       <p className="font-bold">{quote.quoteAuthor}</p>
     </div>
   );
