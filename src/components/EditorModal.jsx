@@ -15,12 +15,15 @@ const EditorModal = ({ quote, isOpen, openModal, closeModal, image }) => {
 };
 
 EditorModal.propTypes = {
-  quote: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-
+  quote: PropTypes.shape({
+    quoteText: PropTypes.string,
+    quoteAuthor: PropTypes.string,
+  }).isRequired,
+  image: PropTypes.shape({
+    url: PropTypes.string,
+  }).isRequired,
   isOpen: PropTypes.bool.isRequired,
   openModal: PropTypes.func.isRequired,
-
   closeModal: PropTypes.func.isRequired,
 };
 

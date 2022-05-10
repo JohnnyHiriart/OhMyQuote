@@ -16,11 +16,9 @@ const QuoteMe = ({
   refreshQuotesUp,
   refreshQuotesDown,
   image,
-  newImage,
   isOpen,
   setIsOpen,
   topQuotes,
-  setNewImage,
 }) => {
   const openModal = () => {
     setIsOpen(true);
@@ -37,29 +35,32 @@ const QuoteMe = ({
   const [quoteSizeMd, setQuoteSizeMd] = useState("");
   const [quoteSizeLg, setQuoteSizeLg] = useState("");
 
+  console.log(quoteLength);
+  console.log(quoteSizeXl);
+
   useEffect(() => {
-    setQuoteLength(quote.quoteText.split("").length);
-    quoteLength <= 120
-      ? (setQuoteSizeXs("xs:text-[2.8vw]"),
-        setQuoteSizeSm("sm:text-[2vw]"),
-        setQuoteSizeLg("lg:text-[1.5vw]"),
-        setQuoteSizeXl("xl:text-[1.3vw]"),
-        setQuoteSizeMd("md:text-[1.9vw]"))
-      : quoteLength >= 200
-      ? (setQuoteSizeXs("xs:text-[3vw]"),
-        setQuoteSizeSm("sm:text-[2.2vw]"),
-        setQuoteSizeXl("xl:text-[1.3vw]"),
-        setQuoteSizeLg("lg:text-[1.7vw]"),
-        setQuoteSizeMd("md:text-[2vw]"))
-      : (setQuoteSizeXs("xs:text-[3.3vw]"),
+    console.log(actualQuote);
+    const myLength =
+      (actualQuote.quoteText && actualQuote.quoteText.split("").length) || 0;
+    setQuoteLength(myLength);
+    myLength <= 80
+      ? (setQuoteSizeXs("xs:text-[3.3vw]"),
         setQuoteSizeLg("lg:text-[1.9vw]"),
         setQuoteSizeSm("sm:text-[2.5vw]"),
         setQuoteSizeXl("xl:text-[1.7vw]"),
-        setQuoteSizeMd("md:text-[2.2vw]"));
-  }, [quote]);
-
-  console.log(quoteLength);
-  console.log(quoteSizeLg);
+        setQuoteSizeMd("md:text-[3vw]"))
+      : myLength >= 150
+      ? (setQuoteSizeXs("xs:text-[3vw]"),
+        setQuoteSizeSm("sm:text-[2.2vw]"),
+        setQuoteSizeXl("xl:text-[0.1vw]"),
+        setQuoteSizeLg("lg:text-[1.7vw]"),
+        setQuoteSizeMd("md:text-[2.5vw]"))
+      : (setQuoteSizeXs("xs:text-[2.8vw]"),
+        setQuoteSizeSm("sm:text-[2vw]"),
+        setQuoteSizeLg("lg:text-[1.5vw]"),
+        setQuoteSizeXl("xl:text-[1.2vw]"),
+        setQuoteSizeMd("md:text-[2.3vw]"));
+  }, [actualQuote]);
 
   return (
     <div className="flex justify-between">
@@ -78,7 +79,7 @@ const QuoteMe = ({
             </button>
           </div>
         </div>
-        <div className="flex w-full xs:my-[5vw] md:my-[0vw]">
+        <div className="flex w-full xs:my-[3vw] md:my-[0vw]">
           <div className="flex justify-between w-full border-4 rounded-lg md:h-[50vh] xs:h-[30vh] bg-redquote bg-opacity-5 border-redquote">
             <div className="w-40">
               <img
@@ -88,7 +89,7 @@ const QuoteMe = ({
             </div>
             <div className="flex items-center text-center">
               <QuoteHome
-                padding="pb-[10vh] xs:pt-[4vh] md:pt-[0vh]"
+                padding="md:pb-[10vh] xs:pt-[4vh] md:pt-[0vh]"
                 height="h-[25vh]"
                 textSize={
                   (quoteSizeSm,
@@ -110,12 +111,15 @@ const QuoteMe = ({
         </div>
         <div className="flex space-x-16 md:mt-10 md:flex-row xs:flex-col">
           <div className="flex space-x-[8vw] m-[2vw] xs:flex md:hidden">
-            <div className="pt-[18vw]">
+            <div className="xs:pt-[18vw] sm:pt-[10vw]">
               <RatingModal
                 imgUrl="/static/img/thumbs-up_1f44d.png"
                 actualQuote={actualQuote}
                 topQuotes={topQuotes}
                 refreshQuotesUp={() => refreshQuotesUp(topQuotes, actualQuote)}
+                refreshQuotesDown={() =>
+                  refreshQuotesDown(topQuotes, actualQuote)
+                }
                 isDown={false}
               />
             </div>
@@ -130,8 +134,6 @@ const QuoteMe = ({
                   isOpen={isOpen}
                   openModal={openModal}
                   closeModal={closeModal}
-                  newImage={newImage}
-                  setNewImage={setNewImage}
                 />
               </div>
               <div>
@@ -140,7 +142,7 @@ const QuoteMe = ({
                 </Link>
               </div>
             </div>
-            <div className="pt-[18vw]">
+            <div className="xs:pt-[18vw] sm:pt-[10vw]">
               <RatingModal
                 imgUrl="/static/img/thumbs-down_1f44e.png"
                 actualQuote={actualQuote}
@@ -148,12 +150,13 @@ const QuoteMe = ({
                 refreshQuotesDown={() =>
                   refreshQuotesDown(topQuotes, actualQuote)
                 }
+                refreshQuotesUp={() => refreshQuotesUp(topQuotes, actualQuote)}
                 isDown={true}
               />
             </div>
           </div>
-          <div className="xs:hidden md:flex">
-            <WhiteButton text="NEW CATEGORY" onClick={() => onClick()} />
+          <div className="p-2 xs:hidden md:flex">
+            <WhiteButton text="NEW QUOTE" onClick={() => onClick()} />
           </div>
           <div className="xs:hidden md:flex">
             <EditorModal
@@ -162,11 +165,9 @@ const QuoteMe = ({
               isOpen={isOpen}
               openModal={openModal}
               closeModal={closeModal}
-              newImage={newImage}
-              setNewImage={setNewImage}
             />
           </div>
-          <div className="xs:hidden md:flex">
+          <div className="p-2 xs:hidden md:flex">
             <Link to="/category">
               <WhiteButton text="NEW CATEGORY" />
             </Link>
@@ -198,14 +199,17 @@ QuoteMe.propTypes = {
     quoteText: PropTypes.string,
     quoteAuthor: PropTypes.string,
   }).isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    url: PropTypes.string,
+  }).isRequired,
+  actualQuote: PropTypes.shape({
+    quoteText: PropTypes.string,
+    quoteAuthor: PropTypes.string,
+  }).isRequired,
   onClick: PropTypes.func.isRequired,
   genre: PropTypes.string.isRequired,
   setGenre: PropTypes.func.isRequired,
-  actualQuote: PropTypes.string.isRequired,
   refreshQuotesUp: PropTypes.func.isRequired,
-  setNewImage: PropTypes.func.isRequired,
-
   refreshQuotesDown: PropTypes.func.isRequired,
   topQuotes: PropTypes.arrayOf(
     PropTypes.shape({
@@ -213,7 +217,6 @@ QuoteMe.propTypes = {
       quoteAuthor: PropTypes.string,
     })
   ).isRequired,
-  newImage: PropTypes.bool.isRequired,
 };
 
 export default QuoteMe;

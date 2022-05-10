@@ -10,8 +10,8 @@ const ModalRating = ({ closedModal }) => {
   }, []);
 
   return (
-    <div className="flex z-20 flex-col fixed top-[12%] left-[82%] translate-x-[-50%] translate-y-[-50%] w-[30vw] h-[10vw] p-3 border-4 rounded-lg shadow-md border-redquote bg-white">
-      <div className="w-full h-1 bg-gray-300">
+    <div className="flex z-20  flex-col fixed md:top-[12%] xs:top-[20vh] sm:top-[22vh] left-[82%] translate-x-[-50%] translate-y-[-50%] w-[30vw] h-[10vw] xl:p-3 border-4 rounded-lg shadow-md xs:p-[2px] border-redquote bg-white">
+      <div className="w-full md:h-1 xs:h-[1px] bg-gray-300">
         <div
           style={{ width: `${completed}%` }}
           className="h-full bg-redquote"
@@ -19,7 +19,7 @@ const ModalRating = ({ closedModal }) => {
       </div>
       <button
         type="button"
-        className="flex hover:font-extrabold hover:text-redquote"
+        className="flex md:hover:font-extrabold hover:text-redquote xs:text-[1vw]"
         onClick={closedModal}
       >
         <span>&times;</span>
