@@ -65,8 +65,9 @@ const Category = ({ setGenre }) => {
       </div>
       <div className="flex items-center justify-center w-screen h-screen xl:ml-[5vw] sm:ml-[10vw] sm:mt-[0vw] xs:ml-[15vw] xs:mt-[118vh] ">
         <ul className="grid flex-wrap justify-center font-bold sm:gap-2 xs:gap-4 xl:grid-cols-5 xl:grid-rows-3 align-center sm:grid-cols-3 sm:grid-rows-5 xs:grid-cols-1 xs:grid-rows-15 ">
-          {Categories.map((category) => (
+          {Categories.map((category, index) => (
             <CategoryBlock
+              key={index}
               name={category.name}
               subCategories={category.subCat}
               setGenre={setGenre}

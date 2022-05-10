@@ -72,7 +72,6 @@ const Carousel = () => {
 
     window.addEventListener("resize", handleResize);
   });
-  console.log(pageWidth);
 
   return (
     <div className="p-[5vw] flex flex-col justify-center h-[50vh] items-center text-[#dbe4ee]">
