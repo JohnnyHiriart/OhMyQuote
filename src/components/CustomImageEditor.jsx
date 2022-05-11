@@ -2,7 +2,6 @@ import ImageEditor from "@toast-ui/react-image-editor";
 import "tui-image-editor/dist/tui-image-editor.css";
 
 const CustomImageEditor = ({ image }) => {
-  console.log(image.src.small);
   return (
     <ImageEditor
       includeUI={{
@@ -27,7 +26,7 @@ const CustomImageEditor = ({ image }) => {
         ],
         initMenu: "",
         uiSize: {
-          width: "60vw",
+          width: "70vw",
           height: "74vh",
         },
         menuBarPosition: "left",
@@ -48,8 +47,8 @@ const theme = {
   "common.bisize.width": "50px",
   "common.bisize.height": "50px",
   "common.background": "white",
-  "menu.iconSize.width": "20px",
-  "menu.iconSize.height": "20px",
+  "menu.iconSize.width": "2vw",
+  "menu.iconSize.height": "2vh",
   "submenu.backgroundColor": "transparent",
   "submenu.partition.color": "#e5e5e5",
 };

@@ -39,27 +39,26 @@ const QuoteMe = ({
   console.log(quoteSizeXl);
 
   useEffect(() => {
-    console.log(actualQuote);
     const myLength =
       (actualQuote.quoteText && actualQuote.quoteText.split("").length) || 0;
     setQuoteLength(myLength);
     myLength <= 80
       ? (setQuoteSizeXs("xs:text-[3.3vw]"),
-        setQuoteSizeLg("lg:text-[1.9vw]"),
+        setQuoteSizeLg("lg:text-[2.8vw]"),
         setQuoteSizeSm("sm:text-[2.5vw]"),
-        setQuoteSizeXl("xl:text-[1.7vw]"),
+        setQuoteSizeXl("xl:text-[2.5vw]"),
         setQuoteSizeMd("md:text-[3vw]"))
       : myLength >= 150
-      ? (setQuoteSizeXs("xs:text-[3vw]"),
+      ? (setQuoteSizeXs("xs:text-[2.5vw]"),
         setQuoteSizeSm("sm:text-[2.2vw]"),
-        setQuoteSizeXl("xl:text-[0.1vw]"),
-        setQuoteSizeLg("lg:text-[1.7vw]"),
-        setQuoteSizeMd("md:text-[2.5vw]"))
+        setQuoteSizeXl("xl:text-[1.8vw]"),
+        setQuoteSizeLg("lg:text-[2.2vw]"),
+        setQuoteSizeMd("md:text-[2.4vw]"))
       : (setQuoteSizeXs("xs:text-[2.8vw]"),
-        setQuoteSizeSm("sm:text-[2vw]"),
-        setQuoteSizeLg("lg:text-[1.5vw]"),
-        setQuoteSizeXl("xl:text-[1.2vw]"),
-        setQuoteSizeMd("md:text-[2.3vw]"));
+        setQuoteSizeSm("sm:text-[2.8vw]"),
+        setQuoteSizeLg("lg:text-[2.5vw]"),
+        setQuoteSizeXl("xl:text-[2.3vw]"),
+        setQuoteSizeMd("md:text-[2.7vw]"));
   }, [actualQuote]);
 
   return (
@@ -89,15 +88,13 @@ const QuoteMe = ({
             </div>
             <div className="flex items-center text-center">
               <QuoteHome
-                padding="md:pb-[10vh] xs:pt-[4vh] md:pt-[0vh]"
-                height="h-[25vh]"
-                textSize={
-                  (quoteSizeSm,
-                  quoteSizeLg,
-                  quoteSizeXl,
-                  quoteSizeXs,
-                  quoteSizeMd)
-                }
+                textSize={`
+                  ${quoteSizeSm}
+                  ${quoteSizeLg}
+                  ${quoteSizeXl}
+                  ${quoteSizeXs}
+                  ${quoteSizeMd}
+                `}
                 quote={quote}
               />
             </div>
@@ -126,15 +123,6 @@ const QuoteMe = ({
             <div className="flex flex-col">
               <div>
                 <WhiteButton text="NEW QUOTE" onClick={() => onClick()} />
-              </div>
-              <div>
-                <EditorModal
-                  image={image}
-                  quote={quote}
-                  isOpen={isOpen}
-                  openModal={openModal}
-                  closeModal={closeModal}
-                />
               </div>
               <div>
                 <Link to="/category">
