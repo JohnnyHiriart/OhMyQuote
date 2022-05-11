@@ -1,10 +1,8 @@
 import PropTypes from "prop-types";
 
-const QuoteHome = ({ padding, height, textSize, quote }) => {
+const QuoteHome = ({ textSize, quote }) => {
   return (
-    <div
-      className={`flex ${padding} ${textSize} flex-col items-center ${height}`}
-    >
+    <div className={`flex  ${textSize} flex-col items-center `}>
       <p className="max-w-[850px] text-center">{`" ${quote.quoteText} "`}</p>
       <p className="font-bold">{quote.quoteAuthor}</p>
     </div>
@@ -12,10 +10,11 @@ const QuoteHome = ({ padding, height, textSize, quote }) => {
 };
 
 QuoteHome.propTypes = {
-  padding: PropTypes.string.isRequired,
-  height: PropTypes.string.isRequired,
   textSize: PropTypes.string.isRequired,
-  quote: PropTypes.string.isRequired,
+  quote: PropTypes.shape({
+    quoteText: PropTypes.string,
+    quoteAuthor: PropTypes.string,
+  }).isRequired,
 };
 
 export default QuoteHome;

@@ -1,67 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+// thumbnail active / not active | status variables boolean type
+
 const Carousel = () => {
-  const [isActiveSlide1, setIsActiveSlide1] = useState(true);
-  const [isActiveSlide2, setIsActiveSlide2] = useState(false);
-  const [isActiveSlide3, setIsActiveSlide3] = useState(false);
-  const [isActiveSlide4, setIsActiveSlide4] = useState(false);
+  const [isActiveSlide, setIsActiveSlide] = useState(1);
 
-  function handleClickActiveSlide1() {
-    setIsActiveSlide1(!isActiveSlide1);
-    setIsActiveSlide2(false);
-    setIsActiveSlide3(false);
-    setIsActiveSlide4(false);
-  }
+  // Status variable to retrieve the window width
 
-  function handleKeyDownActiveSlide1() {
-    setIsActiveSlide1(!isActiveSlide1);
-    setIsActiveSlide2(false);
-    setIsActiveSlide3(false);
-    setIsActiveSlide4(false);
-  }
-
-  function handleClickActiveSlide2() {
-    setIsActiveSlide2(!isActiveSlide2);
-    setIsActiveSlide1(false);
-    setIsActiveSlide3(false);
-    setIsActiveSlide4(false);
-  }
-
-  function handleKeyDownActiveSlide2() {
-    setIsActiveSlide2(!isActiveSlide2);
-    setIsActiveSlide1(false);
-    setIsActiveSlide3(false);
-    setIsActiveSlide4(false);
-  }
-
-  function handleClickActiveSlide3() {
-    setIsActiveSlide3(!isActiveSlide3);
-    setIsActiveSlide1(false);
-    setIsActiveSlide2(false);
-    setIsActiveSlide4(false);
-  }
-
-  function handleKeyDownActiveSlide3() {
-    setIsActiveSlide3(!isActiveSlide3);
-    setIsActiveSlide1(false);
-    setIsActiveSlide2(false);
-    setIsActiveSlide4(false);
-  }
-
-  function handleClickActiveSlide4() {
-    setIsActiveSlide4(!isActiveSlide4);
-    setIsActiveSlide1(false);
-    setIsActiveSlide2(false);
-    setIsActiveSlide3(false);
-  }
-
-  function handleKeyDownActiveSlide4() {
-    setIsActiveSlide4(!isActiveSlide4);
-    setIsActiveSlide1(false);
-    setIsActiveSlide2(false);
-    setIsActiveSlide3(false);
-  }
+  const MAX_WIDTH = 639;
 
   const [pageWidth, setPageWidth] = useState(window.innerWidth);
 
@@ -72,46 +19,48 @@ const Carousel = () => {
 
     window.addEventListener("resize", handleResize);
   });
-  console.log(pageWidth);
 
   return (
     <div className="p-[5vw] flex flex-col justify-center h-[50vh] items-center text-[#dbe4ee]">
       <div className="flex">
-        <Link to={(isActiveSlide1 || pageWidth < 640) && "/category"}>
+        {/* First thumbnail from the left */}
+        <Link
+          to={(isActiveSlide === 1 || pageWidth <= MAX_WIDTH) && "/category"}
+        >
+          {/* If the thumbnail is active (the largest of the 4), when the user clicks on it, he is directed to the corresponding section. Valid according to the screen width */}
+          {/* Boxe */}
           <div
             className={
-              isActiveSlide1 && pageWidth > 639
+              isActiveSlide === 1 && pageWidth > MAX_WIDTH
                 ? "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] transition-[width] duration-200 ease-linear"
                 : "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 w-[3.5rem] rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
             }
-            onClick={!isActiveSlide1 ? handleClickActiveSlide1 : undefined}
-            onKeyDown={!isActiveSlide1 ? handleKeyDownActiveSlide1 : undefined}
+            onClick={isActiveSlide !== 1 && (() => setIsActiveSlide(1))}
+            onKeyDown={isActiveSlide !== 1 && (() => setIsActiveSlide(1))}
             role="button"
             tabIndex={0}
           >
+            {/* Background image */}
             <div
               className={
-                isActiveSlide1 && pageWidth > 639
+                isActiveSlide === 1 && pageWidth > MAX_WIDTH
                   ? "bg-[url('/static/img/categories1.jpg')] rounded-[2rem] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
                   : "bg-[url('/static/img/categories3.jpg')] rounded-[2rem] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
-              onClick={!isActiveSlide1 ? handleClickActiveSlide1 : undefined}
-              onKeyDown={
-                !isActiveSlide1 ? handleKeyDownActiveSlide1 : undefined
-              }
+              onClick={isActiveSlide !== 1 && (() => setIsActiveSlide(1))}
+              onKeyDown={isActiveSlide !== 1 && (() => setIsActiveSlide(1))}
               role="button"
               tabIndex={0}
             >
+              {/* Title, description and logo of each section  */}
               <div
                 className={
-                  isActiveSlide1 && pageWidth > 639
+                  isActiveSlide === 1 && pageWidth > MAX_WIDTH
                     ? "flex scale-1 flex-col justify-end h-full transition-[all] duration-200 ease-linear"
                     : "flex flex-col justify-end h-full scale-[0.6666666666666] transition-[all] duration-200 ease-linear"
                 }
-                onClick={!isActiveSlide1 ? handleClickActiveSlide1 : undefined}
-                onKeyDown={
-                  !isActiveSlide1 ? handleKeyDownActiveSlide1 : undefined
-                }
+                onClick={isActiveSlide !== 1 && (() => setIsActiveSlide(1))}
+                onKeyDown={isActiveSlide !== 1 && (() => setIsActiveSlide(1))}
                 role="button"
                 tabIndex={0}
               >
@@ -125,15 +74,13 @@ const Carousel = () => {
                   </div>
                   <div
                     className={
-                      isActiveSlide1 && pageWidth > 639
+                      isActiveSlide === 1 && pageWidth > MAX_WIDTH
                         ? "opacity-100 ml-0 mt-3 transition-[all] duration-200 ease-linear text-white"
                         : "mt-3 ml-4 transition-[all] duration-200 ease-linear text-white opacity-0"
                     }
-                    onClick={
-                      !isActiveSlide1 ? handleClickActiveSlide1 : undefined
-                    }
+                    onClick={isActiveSlide !== 1 && (() => setIsActiveSlide(1))}
                     onKeyDown={
-                      !isActiveSlide1 ? handleKeyDownActiveSlide1 : undefined
+                      isActiveSlide !== 1 && (() => setIsActiveSlide(1))
                     }
                     role="button"
                     tabIndex={0}
@@ -150,41 +97,41 @@ const Carousel = () => {
             </div>
           </div>
         </Link>
-        <Link to={(isActiveSlide2 || pageWidth < 640) && "/quote-me"}>
+
+        {/* Second thumbnail from the left */}
+        <Link
+          to={(isActiveSlide === 2 || pageWidth <= MAX_WIDTH) && "/quote-me"}
+        >
           <div
             className={
-              isActiveSlide2 && pageWidth > 639
+              isActiveSlide === 2 && pageWidth > MAX_WIDTH
                 ? "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] transition-[width] duration-200 ease-linear"
                 : "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 w-[3.5rem] rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
             }
-            onClick={!isActiveSlide2 ? handleClickActiveSlide2 : undefined}
-            onKeyDown={!isActiveSlide2 ? handleKeyDownActiveSlide2 : undefined}
+            onClick={isActiveSlide !== 2 && (() => setIsActiveSlide(2))}
+            onKeyDown={isActiveSlide !== 2 && (() => setIsActiveSlide(2))}
             role="button"
             tabIndex={0}
           >
             <div
               className={
-                isActiveSlide2 && pageWidth > 639
+                isActiveSlide === 2 && pageWidth > MAX_WIDTH
                   ? "bg-[url('/static/img/quoteme1.jpg')] rounded-[2rem] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
                   : "bg-[url('/static/img/quoteme2.jpg')] rounded-[2rem] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
-              onClick={!isActiveSlide2 ? handleClickActiveSlide2 : undefined}
-              onKeyDown={
-                !isActiveSlide2 ? handleKeyDownActiveSlide2 : undefined
-              }
+              onClick={isActiveSlide !== 2 && (() => setIsActiveSlide(2))}
+              onKeyDown={isActiveSlide !== 2 && (() => setIsActiveSlide(2))}
               role="button"
               tabIndex={0}
             >
               <div
                 className={
-                  isActiveSlide2 && pageWidth > 639
+                  isActiveSlide === 2 && pageWidth > MAX_WIDTH
                     ? "flex scale-1 flex-col justify-end h-full transition-[all] duration-200 ease-linear"
                     : "flex flex-col justify-end h-full scale-[0.6666666666666] transition-[all] duration-200 ease-linear"
                 }
-                onClick={!isActiveSlide2 ? handleClickActiveSlide2 : undefined}
-                onKeyDown={
-                  !isActiveSlide2 ? handleKeyDownActiveSlide2 : undefined
-                }
+                onClick={isActiveSlide !== 2 && (() => setIsActiveSlide(2))}
+                onKeyDown={isActiveSlide !== 2 && (() => setIsActiveSlide(2))}
                 role="button"
                 tabIndex={0}
               >
@@ -201,15 +148,13 @@ const Carousel = () => {
                   </div>
                   <div
                     className={
-                      isActiveSlide2 && pageWidth > 639
+                      isActiveSlide === 2 && pageWidth > MAX_WIDTH
                         ? "opacity-100 ml-0 mt-3 transition-[all] duration-200 ease-linear text-white"
                         : "mt-3 ml-4 transition-[all] duration-200 ease-linear text-white opacity-0"
                     }
-                    onClick={
-                      !isActiveSlide2 ? handleClickActiveSlide2 : undefined
-                    }
+                    onClick={isActiveSlide !== 2 && (() => setIsActiveSlide(2))}
                     onKeyDown={
-                      !isActiveSlide2 ? handleKeyDownActiveSlide2 : undefined
+                      isActiveSlide !== 2 && (() => setIsActiveSlide(2))
                     }
                     role="button"
                     tabIndex={0}
@@ -226,41 +171,41 @@ const Carousel = () => {
             </div>
           </div>
         </Link>
-        <Link to={(isActiveSlide3 || pageWidth < 640) && "/top-quotes"}>
+
+        {/* Third thumbnail from the left */}
+        <Link
+          to={(isActiveSlide === 3 || pageWidth <= MAX_WIDTH) && "/top-quotes"}
+        >
           <div
             className={
-              isActiveSlide3 && pageWidth > 639
+              isActiveSlide === 3 && pageWidth > MAX_WIDTH
                 ? "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] transition-[width] duration-200 ease-linear"
                 : "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 w-[3.5rem] rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
             }
-            onClick={!isActiveSlide3 ? handleClickActiveSlide3 : undefined}
-            onKeyDown={!isActiveSlide3 ? handleKeyDownActiveSlide3 : undefined}
+            onClick={isActiveSlide !== 3 && (() => setIsActiveSlide(3))}
+            onKeyDown={isActiveSlide !== 3 && (() => setIsActiveSlide(3))}
             role="button"
             tabIndex={0}
           >
             <div
               className={
-                isActiveSlide3 && pageWidth > 639
+                isActiveSlide === 3 && pageWidth > MAX_WIDTH
                   ? "bg-[url('/static/img/top1.jpg')] rounded-[2rem] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
                   : "bg-[url('/static/img/top2.jpg')] rounded-[2rem] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
-              onClick={!isActiveSlide3 ? handleClickActiveSlide3 : undefined}
-              onKeyDown={
-                !isActiveSlide3 ? handleKeyDownActiveSlide3 : undefined
-              }
+              onClick={isActiveSlide !== 3 && (() => setIsActiveSlide(3))}
+              onKeyDown={isActiveSlide !== 3 && (() => setIsActiveSlide(3))}
               role="button"
               tabIndex={0}
             >
               <div
                 className={
-                  isActiveSlide3 && pageWidth > 639
+                  isActiveSlide === 3 && pageWidth > MAX_WIDTH
                     ? "flex scale-1 flex-col justify-end h-full transition-[all] duration-200 ease-linear"
                     : "flex flex-col justify-end h-full scale-[0.6666666666666] transition-[all] duration-200 ease-linear"
                 }
-                onClick={!isActiveSlide3 ? handleClickActiveSlide3 : undefined}
-                onKeyDown={
-                  !isActiveSlide3 ? handleKeyDownActiveSlide3 : undefined
-                }
+                onClick={isActiveSlide !== 3 && (() => setIsActiveSlide(3))}
+                onKeyDown={isActiveSlide !== 3 && (() => setIsActiveSlide(3))}
                 role="button"
                 tabIndex={0}
               >
@@ -277,15 +222,13 @@ const Carousel = () => {
                   </div>
                   <div
                     className={
-                      isActiveSlide3 && pageWidth > 639
+                      isActiveSlide === 3 && pageWidth > MAX_WIDTH
                         ? "opacity-100 ml-0 mt-3 transition-[all] duration-200 ease-linear text-white"
                         : "mt-3 ml-4 transition-[all] duration-200 ease-linear text-white opacity-0"
                     }
-                    onClick={
-                      !isActiveSlide3 ? handleClickActiveSlide3 : undefined
-                    }
+                    onClick={isActiveSlide !== 3 && (() => setIsActiveSlide(3))}
                     onKeyDown={
-                      !isActiveSlide3 ? handleKeyDownActiveSlide3 : undefined
+                      isActiveSlide !== 3 && (() => setIsActiveSlide(3))
                     }
                     role="button"
                     tabIndex={0}
@@ -302,41 +245,41 @@ const Carousel = () => {
             </div>
           </div>
         </Link>
-        <Link to={(isActiveSlide4 || pageWidth < 640) && "/the-crew"}>
+
+        {/* Last thumbnail from the left */}
+        <Link
+          to={(isActiveSlide === 4 || pageWidth <= MAX_WIDTH) && "/the-crew"}
+        >
           <div
             className={
-              isActiveSlide4 && pageWidth > 639
+              isActiveSlide === 4 && pageWidth > MAX_WIDTH
                 ? "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] transition-[width] duration-200 ease-linear"
                 : "shadow-shadowcarousel1 cursor-pointer tallxs:h-64 h-96 w-[3.5rem] rounded-[2rem] m-2 bg-[end] bg-no-repeat bg-cover overflow-hidden transition-[width] duration-200 ease-linear"
             }
-            onClick={!isActiveSlide4 ? handleClickActiveSlide4 : undefined}
-            onKeyDown={!isActiveSlide4 ? handleKeyDownActiveSlide4 : undefined}
+            onClick={isActiveSlide !== 4 && (() => setIsActiveSlide(4))}
+            onKeyDown={isActiveSlide !== 4 && (() => setIsActiveSlide(4))}
             role="button"
             tabIndex={0}
           >
             <div
               className={
-                isActiveSlide4 && pageWidth > 639
+                isActiveSlide === 4 && pageWidth > MAX_WIDTH
                   ? "bg-[url('/static/img/crew1.jpg')] rounded-[2rem] scale-1 xs:w-[5rem] sm:w-[20rem] md:w-[25rem] lg:w-[35rem] tallxs:h-64 h-96 shadow-shadowcarousel3 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
                   : "bg-[url('/static/img/crew2.jpg')] rounded-[2rem] scale-150 w-[3.5rem] tallxs:h-64 h-96 bg-bottom bg-no-repeat bg-cover overflow-hidden transition-[all] duration-200 ease-linear"
               }
-              onClick={!isActiveSlide4 ? handleClickActiveSlide4 : undefined}
-              onKeyDown={
-                !isActiveSlide4 ? handleKeyDownActiveSlide4 : undefined
-              }
+              onClick={isActiveSlide !== 4 && (() => setIsActiveSlide(4))}
+              onKeyDown={isActiveSlide !== 4 && (() => setIsActiveSlide(4))}
               role="button"
               tabIndex={0}
             >
               <div
                 className={
-                  isActiveSlide4 && pageWidth > 639
+                  isActiveSlide === 4 && pageWidth > MAX_WIDTH
                     ? "flex scale-1 flex-col justify-end h-full transition-[all] duration-200 ease-linear"
                     : "flex flex-col justify-end h-full scale-[0.6666666666666] transition-[all] duration-200 ease-linear"
                 }
-                onClick={!isActiveSlide4 ? handleClickActiveSlide4 : undefined}
-                onKeyDown={
-                  !isActiveSlide4 ? handleKeyDownActiveSlide4 : undefined
-                }
+                onClick={isActiveSlide !== 4 && (() => setIsActiveSlide(4))}
+                onKeyDown={isActiveSlide !== 4 && (() => setIsActiveSlide(4))}
                 role="button"
                 tabIndex={0}
               >
@@ -353,15 +296,13 @@ const Carousel = () => {
                   </div>
                   <div
                     className={
-                      isActiveSlide4 && pageWidth > 639
+                      isActiveSlide === 4 && pageWidth > MAX_WIDTH
                         ? "opacity-100 ml-0 mt-3 transition-[all] duration-200 ease-linear text-white"
                         : "mt-3 ml-4 transition-[all] duration-200 ease-linear text-white opacity-0"
                     }
-                    onClick={
-                      !isActiveSlide4 ? handleClickActiveSlide4 : undefined
-                    }
+                    onClick={isActiveSlide !== 4 && (() => setIsActiveSlide(4))}
                     onKeyDown={
-                      !isActiveSlide4 ? handleKeyDownActiveSlide4 : undefined
+                      isActiveSlide !== 4 && (() => setIsActiveSlide(4))
                     }
                     role="button"
                     tabIndex={0}

@@ -6,7 +6,7 @@ const WhiteButton = ({ text, onClick }) => {
     <button
       type="button"
       onClick={() => onClick()}
-      className="md:p-[1vw] xs:p-[2vw] xs:my-[6vw] md:my-[0vw] text-[1vw] font-bold text-center bg-white border-4 rounded-lg shadow-md xs:w-[40vw] md:w-[15vw] border-redquote hover:border-white text-redquote hover:text-white hover:bg-redquote"
+      className="md:p-[1vw] xs:p-[2vw] xs:my-[6vw] md:my-[0vw] xs:text-[2.8vw] sm:text-[2vw] md:text-[1.9vw] lg:text-[1.5vw] xl:text-[1.3vw] font-bold text-center bg-white border-4 rounded-lg shadow-md xs:w-[40vw] md:w-[15vw] border-redquote hover:border-white text-redquote hover:text-white hover:bg-redquote"
     >
       {text}
     </button>
@@ -15,7 +15,6 @@ const WhiteButton = ({ text, onClick }) => {
 
 WhiteButton.propTypes = {
   text: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
 };
 
 export default WhiteButton;

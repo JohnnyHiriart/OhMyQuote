@@ -25,7 +25,7 @@ const RatingModal = ({
   };
 
   return (
-    <div className="hover:cursor-pointer w-[10vw]">
+    <div className="hover:cursor-pointer xs:w-[10vw] md:w-[6vw] md:pb-[8vw] lg:pb-[0vw]">
       <img src={imgUrl} alt="thumb" onClick={openModal} />
       {isOpen && <ModalRating closedModal={closedModal} />}
     </div>
@@ -35,10 +35,16 @@ const RatingModal = ({
 RatingModal.propTypes = {
   imgUrl: PropTypes.string.isRequired,
   isDown: PropTypes.bool.isRequired,
-  refreshQuotesUp: PropTypes.func.isRequired,
-  refreshQuotesDown: PropTypes.func.isRequired,
-  actualQuote: PropTypes.string.isRequired,
-  topQuotes: PropTypes.string.isRequired,
+  actualQuote: PropTypes.shape({
+    quoteText: PropTypes.string,
+    quoteAuthor: PropTypes.string,
+  }).isRequired,
+  topQuotes: PropTypes.arrayOf(
+    PropTypes.shape({
+      quoteText: PropTypes.string,
+      quoteAuthor: PropTypes.string,
+    })
+  ).isRequired,
 };
 
 export default RatingModal;

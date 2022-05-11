@@ -10,7 +10,6 @@ const Home = ({ quote }) => {
       <Carousel />
       <QuoteHome
         padding="xs:p-[2vh] ms:p-[3vh]"
-        height=""
         textSize="xs-text-[4vw] ms-text-[3vw]"
         quote={quote}
       />

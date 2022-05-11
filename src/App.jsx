@@ -192,7 +192,7 @@ function App() {
   const [quote, setQuote] = useState({});
   const [onClick, setOnClick] = useState(false);
   const [genre, setGenre] = useState("");
-  const [image, setImage] = useState([]);
+  const [image, setImage] = useState({});
   const [genreRandom, setGenreRandom] = useState(
     randomCategories[getRandomInt(randomCategories.length)]
   );
@@ -228,7 +228,7 @@ function App() {
       ? axios({
           method: "get",
           url: `https://quote-garden.herokuapp.com/api/v3/quotes${`?genre=${genre}`}`,
-          params: { page: getRandomInt(10) },
+          params: { page: Math.floor(Math.random() * 10) + 1 },
         })
           .then((res) => res.data.data)
           .then((data) => setQuote(data[getRandomInt(data.length)]))
@@ -236,7 +236,7 @@ function App() {
       : axios({
           method: "get",
           url: `https://quote-garden.herokuapp.com/api/v3/quotes${`?genre=${genreRandom}`}`,
-          params: { page: getRandomInt(10) },
+          params: { page: Math.floor(Math.random() * 10) + 1 },
         })
           .then((res) => res.data.data)
           .then((data) => setQuote(data[getRandomInt(data.length)]))

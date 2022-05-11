@@ -6,14 +6,14 @@ import RbThumbsTop from "./RbThumbsTop";
 
 const TopQuotes = ({ setQuote, topQuotes }) => {
   return (
-    <div classes="flex content-center justify-center">
+    <>
       <div>
         <NavBar />
       </div>
       <div className="flex content-center justify-center font-bold text-redquote pl-20 text-[6vw]">
         <h1 className="">TOP QUOTES</h1>
       </div>
-      <div className="flex flex-col w-screen left-16">
+      <div className="flex flex-col w-screen">
         {topQuotes.map((quote, index) => (
           <div onClick={() => setQuote(quote)} key={index}>
             <Link to="/quote-me">
@@ -27,7 +27,7 @@ const TopQuotes = ({ setQuote, topQuotes }) => {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
