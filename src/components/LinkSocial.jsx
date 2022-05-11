@@ -3,7 +3,7 @@ import React from "react";
 const LinkSocial = () => {
   return (
     <div className="flex flex-col pb-24">
-      <button className="mx-20 my-10">
+      <button className="mx-5 my-10">
         <a
           target="_blank"
           href="http://www.facebook.com/"
@@ -15,7 +15,7 @@ const LinkSocial = () => {
           />
         </a>
       </button>
-      <button className="mx-20 my-10">
+      <button className="mx-5 my-10">
         <a
           target="_blank"
           href="http://www.instagram.com/"
@@ -27,7 +27,7 @@ const LinkSocial = () => {
           />
         </a>
       </button>
-      <button className="mx-20 my-10">
+      <button className="mx-5 my-10">
         <a
           target="_blank"
           href="http://www.pinterest.fr/pin-builder/"
@@ -39,7 +39,7 @@ const LinkSocial = () => {
           />
         </a>
       </button>
-      <button className="mx-20 my-10">
+      <button className="mx-5 my-10">
         <a
           target="_blank"
           href="http://www.twitter.com/"
