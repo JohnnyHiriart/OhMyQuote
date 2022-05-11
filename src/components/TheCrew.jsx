@@ -35,15 +35,15 @@ const crewItems = [
 
 const TheCrew = () => {
   return (
-    <div>
+    <div className="">
       <div>
         <NavBar />
       </div>
-      <div className="fixed flex flex-col content-center justify-center p-5 left-28">
-        <div className="flex justify-center font-bold text-redquote text-[6vw]">
+      <div className="flex flex-col items-center justify-center w-[90%] xs:pl-[100px] sm:pl-[200px]">
+        <div className="text-center font-bold text-redquote text-[6vw] xs:pb-[3.5vw] sm:pb-[2.5vw] md:pb-[2vw]">
           <h1>THE CREW</h1>
         </div>
-        <div className="flex gap-8">
+        <div className="flex justify-center xs:flex-wrap xl:flex-nowrap gap-8">
           {crewItems.map((crew, index) => (
             <Card key={index} {...crew} />
           ))}
