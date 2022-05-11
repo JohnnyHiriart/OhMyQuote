@@ -28,22 +28,22 @@ const crewItems = [
     image: "/static/img/IMG_20220325_104207.jpeg",
     title: "Johnny: Our Quote Master",
     quote:
-      "'After thirty years of studying female psychology, I still haven't found the answer to the big question: what do they really want?'",
-    signature: "Sigmund Freud",
+      "'When I was in junior high school, the teachers voted me the student most likely to end up in the electric chair.'",
+    signature: "Sylvester Stallone",
   },
 ];
 
 const TheCrew = () => {
   return (
-    <div className="">
+    <div className="h-[100vh]">
       <div>
         <NavBar />
       </div>
       <div className="flex flex-col items-center justify-center w-[90%] xs:pl-[100px] sm:pl-[200px]">
-        <div className="text-center font-bold text-redquote text-[6vw] xs:pb-[3.5vw] sm:pb-[2.5vw] md:pb-[2vw]">
+        <div className="text-center font-bold text-redquote text-[6vw] xs:pb-[3.5vw] sm:pb-[2.5vw] md:pb-[1.5vw]">
           <h1>THE CREW</h1>
         </div>
-        <div className="flex justify-center xs:flex-wrap xl:flex-nowrap gap-8">
+        <div className="flex justify-center gap-8 xs:flex-wrap xl:flex-nowrap">
           {crewItems.map((crew, index) => (
             <Card key={index} {...crew} />
           ))}

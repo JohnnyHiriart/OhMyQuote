@@ -5,7 +5,7 @@ import RedButton from "./RedButton";
 
 const EditorModal = ({ quote, isOpen, openModal, closeModal, image }) => {
   return (
-    <div>
+    <div className="p-0 m-0">
       <RedButton text="CUSTOMIZE" onClick={openModal} />
       {isOpen && (
         <ModalEditor closedModal={closeModal} quote={quote} image={image} />
