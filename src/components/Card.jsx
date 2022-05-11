@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Card = ({ image, title, quote, signature }) => {
   return (
-    <div className="w-1/4 px-6 py-6 border-4 rounded-lg border-redquote bg-redquote bg-opacity-5 text-[1vw]">
+    <div className="xs:w-[190px] sm:w-[270px] px-6 py-6 border-4 rounded-lg border-redquote bg-redquote bg-opacity-5 xs:text-[2.8vw] sm:text-[2vw] md:text-[1.9vw] lg:text-[1.5vw] xl:text-[1.3vw]">
       <img className="w-full mb-4 rounded-md" src={image} alt="crew_image" />
       <h2 className="mb-4 font-bold underline">{title}</h2>
       <p className="font-light">{quote}</p>
