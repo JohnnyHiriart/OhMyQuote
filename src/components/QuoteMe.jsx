@@ -62,7 +62,7 @@ const QuoteMe = ({
   }, [actualQuote]);
 
   return (
-    <div className="flex justify-between">
+    <div className="flex  xs:h-[100vh] justify-between">
       <div>
         <NavBar />
       </div>
@@ -146,7 +146,7 @@ const QuoteMe = ({
           <div className="p-2 xs:hidden md:flex">
             <WhiteButton text="NEW QUOTE" onClick={() => onClick()} />
           </div>
-          <div className="xs:hidden md:flex">
+          <div className="p-2 xs:hidden md:flex">
             <EditorModal
               image={image}
               quote={quote}
