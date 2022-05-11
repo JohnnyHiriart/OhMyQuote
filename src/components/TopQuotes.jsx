@@ -6,7 +6,7 @@ import RbThumbsTop from "./RbThumbsTop";
 
 const TopQuotes = ({ setQuote, topQuotes }) => {
   return (
-    <div classes="flex content-center justify-center">
+    <>
       <div>
         <NavBar />
       </div>
@@ -27,7 +27,7 @@ const TopQuotes = ({ setQuote, topQuotes }) => {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
