@@ -15,7 +15,6 @@ const WhiteButton = ({ text, onClick }) => {
 
 WhiteButton.propTypes = {
   text: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
 };
 
 export default WhiteButton;

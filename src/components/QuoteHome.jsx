@@ -15,7 +15,10 @@ QuoteHome.propTypes = {
   padding: PropTypes.string.isRequired,
   height: PropTypes.string.isRequired,
   textSize: PropTypes.string.isRequired,
-  quote: PropTypes.string.isRequired,
+  quote: PropTypes.shape({
+    quoteText: PropTypes.string,
+    quoteAuthor: PropTypes.string,
+  }).isRequired,
 };
 
 export default QuoteHome;
